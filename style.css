@@ -287,24 +287,21 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
     justify-content: center;
     gap: 2.5rem; /* Gap sama dengan .timeline-item */
 }
-
-/* Ikon Bahasa: Ukuran lingkaran tetap 100px, tetapi SIMBOL di dalamnya diperbesar */
 .language-icon {
     width: 100px;
     height: 100px;
     min-width: 100px;
     border-radius: 50%;
-    background: #fffffffd; 
-    border: 1px solid #ccc; 
+    background: #fffffffd;
+    border: 1px solid #ccc;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent); 
-    
-    /* PERBESAR SIMBOL DI SINI */
-    font-size: 4.5rem; /* Jika masih kurang besar, Anda bisa naikkan ke 5rem atau 5.5rem */
-}
 
+    color: var(--accent);
+    font-size: 3.5rem;
+}
 
 /* Kotak Konten */
 .language-box {
@@ -445,7 +442,6 @@ FAQ MOBILE
 
 @media (max-width: 768px) {
 
-```
 .faq-wrapper {
     margin-top: 30px;
     gap: 12px;
@@ -473,19 +469,85 @@ FAQ MOBILE
 .faq-item.active .faq-answer {
     padding: 0 18px 18px;
 }
-```
 
 }
 
 /* RESPONSIVE */
 @media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}nav a{margin-left:2rem}.home{gap:4rem}}
 @media(max-width:995px){
-header{margin-top:0;padding:1.5rem 7%}.menu-btn{display:block}
-nav{position:absolute;display:none;top:100%;right:5%;width:260px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);border-bottom-left-radius:2rem;padding:1rem 2rem;background:#111}
-nav.active{display:block}nav a{display:block;font-size:1.8rem;margin:2rem 0;width:fit-content}
-.home{flex-direction:column;text-align:center;padding-top:12rem;gap:4rem}.home-img img{width:55vw;min-width:260px}
-.home-content h1{font-size:5rem}.home-content h3{font-size:2.8rem}.home-content p{font-size:1.45rem}.social-icons{display:flex;justify-content:center}
-.skills-wrapper,.FAQ-wrapper{grid-template-columns:1fr}
+
+    header{
+        margin-top:0;
+        padding:1.5rem 7%;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        position:absolute;
+        display:none;
+        top:100%;
+        right:5%;
+        width:260px;
+        border-left:3px solid var(--accent);
+        border-bottom:3px solid var(--accent);
+        border-bottom-left-radius:2rem;
+        padding:1rem 2rem;
+        background:#111;
+    }
+
+    nav.active{
+        display:block;
+    }
+
+    nav a{
+        display:block;
+        font-size:1.8rem;
+        margin:2rem 0;
+        width:fit-content;
+    }
+
+    .home{
+        flex-direction:column;
+        text-align:center;
+        padding-top:12rem;
+        gap:4rem;
+    }
+
+    .home-img img{
+        width:55vw;
+        min-width:260px;
+    }
+
+    .home-content h1{
+        font-size:5rem;
+    }
+
+    .home-content h3{
+        font-size:2.8rem;
+    }
+
+    .home-content p{
+        font-size:1.45rem;
+    }
+
+    .social-icons{
+        display:flex;
+        justify-content:center;
+    }
+
+    /* SKILLS TETAP SEPERTI DESKTOP */
+    .skills-wrapper{
+        grid-template-columns:1fr 1fr;
+        gap:2rem;
+    }
+
+    /* FAQ tetap 1 kolom */
+    .FAQ-wrapper{
+        grid-template-columns:1fr;
+    }
 }
 @media(max-width:650px){
 html{font-size:55%}section{padding:9rem 7% 6rem}.section-title h2{font-size:4rem}.cards{grid-template-columns:1fr}
