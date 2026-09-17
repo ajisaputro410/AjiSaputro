@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;text-decoration:none;border:none;outline:none;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+:root{--accent:#b74b4b;--bg:#000;--muted:#bdbdbd}
+html{font-size:62.5%;scroll-padding-top:90px}
+body{width:100%;min-height:100vh;overflow-x:hidden;background:#000;color:#fff}
+header{margin-top:20px;position:fixed;top:0;left:0;width:100%;padding:1rem 10%;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;z-index:100;}
+.logo{font-size:4rem;color:var(--accent);font-weight:800;cursor:pointer;transition:.5s ease;}
+.logo:hover{transform:scale(1.05);}
+nav a{font-size:1.8rem;color:#fff;margin-left:3.5rem;font-weight:500;transition:.3s ease;border-bottom:3px solid transparent}
+nav a:hover,nav a.active{color:var(--accent);border-bottom:3px solid var(--accent)}
+.menu-btn{display:none;background:transparent;color:var(--accent);font-size:2.8rem;cursor:pointer}
+section{min-height:100vh;padding:10rem 9% 7rem}
+
+/* HOME */
+.home{display:flex;justify-content:center;align-items:center;gap:8rem;background:#000}
+.home .home-content{max-width:720px}.home .home-content h1{font-size:6rem;font-weight:700;line-height:1.3}
+span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font-weight:700}
+.home-content p{font-size:1.6rem;line-height:1.8;color:#ddd}
+.home-img{border-radius:50%;flex-shrink:0}.home-img img{width:32vw;max-width:470px;min-width:280px;border-radius:50%;box-shadow:0 0 35px rgba(183,75,75,.45);cursor:pointer;transition:.3s ease}
+.home-img img:hover{transform:scale(1.02);box-shadow:0 0 50px rgba(183,75,75,.65)}
+.social-icons a{display:inline-flex;justify-content:center;align-items:center;width:4rem;height:4rem;background:transparent;border:.2rem solid var(--accent);font-size:2rem;border-radius:50%;margin:3rem 1.5rem 3rem 0;transition:.3s ease;color:var(--accent)}
+.social-icons a:hover{color:#000;transform:scale(1.15) translateY(-5px);background:var(--accent);box-shadow:0 0 25px var(--accent)}
+.btn{display:inline-block;padding:1rem 2.8rem;background:#000;border-radius:4rem;font-size:1.6rem;color:var(--accent);letter-spacing:.2rem;font-weight:600;border:2px solid var(--accent);transition:.3s ease;cursor:pointer}
+.btn:hover{transform:scale(1.03);background:var(--accent);color:#000;box-shadow:0 0 25px var(--accent)}
+.home-buttons{display:flex;align-items:center;gap:1.5rem;margin-top:1rem;}
+.cv-btn{display:inline-flex;align-items:center;justify-content:center;gap:.8rem;}
+.cv-btn i{font-size:1.5rem;}
+
+/* TYPING */
+.typing-text{font-size: 34px; font-weight: 600; min-width: 280px;}
+.typing-text span{position: relative;}
+.typing-text span::before{content: "software Developer"; color: #b74b4b; animation: words 20s infinite;}
+.typing-text span::after{content: "";background-color: black;position: absolute; width: calc(100% + 8px);height: 100%;border-left: 3px solid black;right: -8;animation: cursor 0.6s infinite;}
+
+@keyframes cursor{to{border-left: 3px solid #b74b4b;}}
+@keyframes words{
+    0%, 20%{content: "Junior Surveyor";}
+    21%, 40%{content: "Land Surveyor";}
+    41%, 60%{content: "Geospatial Analyst";}
+    61%, 80%{content: "GIS Specialist";}
+    81%, 100%{content: "Geophysicist";}}
+@media (max-width: 1000px){
+    .home{gap: 4rem;}}
+@media(max-width:995px){
+    .home{flex-direction: column; margin: 5rem 4rem;}
+    .home .home-content h3{font-size: 2.5rem;}
+    .home-content h1{font-size: 5rem;}
+    .home-img img{width: 70vw; margin-top: 4rem;}}
+
+/* GENERAL */
+.section{display:flex;flex-direction:column;align-items:center}.section-title{text-align:center;max-width:800px;margin-bottom:5rem}
+.section-title h2{font-size:5rem;margin-bottom:1rem}.section-title p{font-size:1.6rem;color:var(--muted);line-height:1.7}
+
+/* SERVICES */
+.cards{width:100%;max-width:1200px;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.card{background:linear-gradient(145deg,#151515,#0b0b0b);border:1px solid #272727;border-radius:2rem;padding:3rem 2.2rem;text-align:center;min-height:310px;transition:.3s ease}
+.card:hover{transform:translateY(-10px);border-color:var(--accent);box-shadow:0 0 25px rgba(183,75,75,.2)}
+.card i{color:var(--accent);font-size:4rem;margin-bottom:2rem}.card h3{font-size:2.2rem;margin-bottom:1.3rem}.card p{color:var(--muted);font-size:1.45rem;line-height:1.8}
+
+
+/* SKILLS */
+.skills-wrapper {
+    width: 100%;
+    max-width: 1000px; /* dari 1100px */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; /* dari 3rem */
+}
+
+/* Skill Group */
+.skill-group {
+    background: #111;
+    border: 1px solid #272727;
+    border-radius: 1.6rem;
+    padding: 1.6rem; /* lebih kecil */
+}
+
+.skill-group h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-group h3 i {
+    color: var(--accent);
+    margin-right: .8rem;
+}
+
+
+/* Technical Skills */
+.skill-item {
+    margin-bottom: .8rem;
+    padding: .8rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    transition: all .4s ease;
+}
+
+.skill-item:hover {
+    background: #1a1a1a;
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.skill-item:hover > div:first-child span {
+    color: #fff !important;
+    transition: color .3s ease;
+}
+
+.skill-item > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-bottom: .4rem;
+}
+
+.skill-item > div:first-child span:last-child {
+    color: var(--accent);
+}
+
+
+/* Skill Bar */
+.skill-bar {
+    width: 100%;
+    height: 7px;
+    background: #292929;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-bar span {
+    display: block;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 20px;
+    width: 0%;
+    transition: width 0.3s linear;
+}
+
+
+/* Software Skills */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.skill-tags span {
+    display: inline-flex !important;
+    align-items: center;
+    color: #fff;
+    background: #1a1a1a;
+    border: 1px solid var(--accent);
+    padding: .75rem 1.2rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    transition: .3s ease;
+}
+
+.skill-tags span:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+
+/* Font Awesome Icons */
+.skill-tags span i {
+    font-size: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: .6rem;
+}
+
+
+/* QGIS Icon */
+.qgis-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    margin-right: .6rem;
+    vertical-align: middle;
+    transition: filter .3s ease;
+}
+
+.skill-tags span:hover .qgis-icon {
+    filter: brightness(0);
+}
+
+/* TIMELINE */
+.timeline{
+    width:100%;
+    max-width:850px;
+    position:relative;
+    margin:0 auto;
+}
+
+.timeline::before{
+    display:none;
+}
+
+.timeline-item{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:2.5rem;
+    margin-bottom:3rem;
+}
+
+.timeline-icon{
+    width:100px;
+    height:100px;
+    min-width:100px;
+    border-radius:50%;
+    background:#fffffffd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    border:1px solid #ccc;
+}
+
+.timeline-icon img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:8px;
+    display:block;
+    margin:0 auto;
+}
+
+.timeline-content{
+    flex:0 1 700px;
+    background:#111;
+    border:1px solid #272727;
+    border-radius:1.5rem;
+    padding:2.5rem;
+}
+
+.timeline-content:hover{
+    border-color:var(--accent);
+}
+
+.timeline-date{
+    display:inline-block;
+    color:var(--accent);
+    font-size:1.3rem;
+    font-weight:600;
+    margin-bottom:.8rem;
+}
+
+.timeline-content h3{
+    font-size:2.2rem;
+    margin-bottom:.5rem;
+}
+
+.timeline-content h4{
+    font-size:1.5rem;
+    font-weight:500;
+    color:#aaa;
+    margin-bottom:1.5rem;
+}
+
+.timeline-content p,
+.timeline-content li{
+    color:var(--muted);
+    font-size:1.45rem;
+    line-height:1.8;
+}
+
+.timeline-content ul{
+    padding-left:2rem;
+}
+
+/* Container Utama: Menyamakan dengan .timeline */
+.language-section {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem; /* Gap sama dengan .timeline-item */
+}
+
+/* Ikon Bahasa: Ukuran lingkaran tetap 100px, tetapi SIMBOL di dalamnya diperbesar */
+.language-icon {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 50%;
+    background: #fffffffd; 
+    border: 1px solid #ccc; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent); 
+    
+    /* PERBESAR SIMBOL DI SINI */
+    font-size: 4.5rem; /* Jika masih kurang besar, Anda bisa naikkan ke 5rem atau 5.5rem */
+}
+
+
+/* Kotak Konten */
+.language-box {
+    flex: 0 1 700px;
+    width: 100%;
+    padding: 2.5rem;
+    background: #111;
+    border: 1px solid #272727;
+    border-radius: 1.5rem;
+    transition: .3s ease;
+}
+
+.language-box:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(183,75,75,.2);
+    transform: translateY(-3px);
+}
+
+/* Styling Teks Dalam Kotak */
+.language-content strong {
+    color: var(--accent);
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+.language-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-content li {
+    color: var(--muted);
+    font-size: 1.45rem;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.language-content li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+}
+
+/* =========================
+FAQ Q&A SECTION
+========================= */
+
+.faq-wrapper {
+width: 100%;
+max-width: 900px;
+margin: 40px auto 0;
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.faq-item {
+background: rgba(255, 255, 255, 0.04);
+border: 1px solid rgba(183, 75, 255, 0.25);
+border-radius: 15px;
+overflow: hidden;
+transition: 0.3s ease;
+}
+
+.faq-item:hover {
+border-color: #b74bff;
+transform: translateY(-2px);
+}
+
+.faq-question {
+width: 100%;
+border: none;
+outline: none;
+background: transparent;
+color: white;
+padding: 22px 25px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+text-align: left;
+font-family: 'Poppins', sans-serif;
+font-size: 1.6rem;
+font-weight: 600;
+cursor: pointer;
+}
+
+.faq-question i {
+color: #b74bff;
+font-size: 1.4rem;
+transition: transform 0.3s ease;
+flex-shrink: 0;
+}
+
+.faq-answer {
+max-height: 0;
+overflow: hidden;
+opacity: 0;
+padding: 0 25px;
+transition: max-height 0.4s ease,
+opacity 0.3s ease,
+padding 0.4s ease;
+}
+
+.faq-answer p {
+margin: 0;
+color: #d0d0d0;
+font-size: 1.4rem;
+line-height: 1.8;
+}
+
+.faq-answer a {
+color: #b74bff;
+text-decoration: none;
+}
+
+.faq-answer a:hover {
+text-decoration: underline;
+}
+
+.faq-item.active .faq-answer {
+max-height: 300px;
+opacity: 1;
+padding: 0 25px 22px;
+}
+
+.faq-item.active .faq-question i {
+transform: rotate(180deg);
+}
+
+/* =========================
+FAQ MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+```
+.faq-wrapper {
+    margin-top: 30px;
+    gap: 12px;
+}
+
+.faq-question {
+    padding: 18px 18px;
+    font-size: 1.4rem;
+}
+
+.faq-question i {
+    font-size: 1.2rem;
+}
+
+.faq-answer {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.faq-answer p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 18px 18px;
+}
+```
+
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}nav a{margin-left:2rem}.home{gap:4rem}}
+@media(max-width:995px){
+header{margin-top:0;padding:1.5rem 7%}.menu-btn{display:block}
+nav{position:absolute;display:none;top:100%;right:5%;width:260px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);border-bottom-left-radius:2rem;padding:1rem 2rem;background:#111}
+nav.active{display:block}nav a{display:block;font-size:1.8rem;margin:2rem 0;width:fit-content}
+.home{flex-direction:column;text-align:center;padding-top:12rem;gap:4rem}.home-img img{width:55vw;min-width:260px}
+.home-content h1{font-size:5rem}.home-content h3{font-size:2.8rem}.home-content p{font-size:1.45rem}.social-icons{display:flex;justify-content:center}
+.skills-wrapper,.FAQ-wrapper{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+html{font-size:55%}section{padding:9rem 7% 6rem}.section-title h2{font-size:4rem}.cards{grid-template-columns:1fr}
+.home-img img{width:70vw}.timeline-item{gap:1.5rem}.timeline::before{left:20px}.timeline-icon{width:42px;height:42px;min-width:42px;font-size:1.5rem}
+.timeline-content{padding:2rem}.FAQ-form .btn{width:100%}
+}
