@@ -396,14 +396,18 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
 }
 
 /* =======EXPERIENCE SECTION (CARD DENGAN FOTO)====================================================== */
+/* ==========================================================================
+   EXPERIENCE SECTION (CARD DENGAN FOTO) - BERLAKU DI SEMUA TAMPILAN
+   ========================================================================== */
 .experience-grid {
     display: grid;
-    /* Akan otomatis menyesuaikan: 2 ke samping di laptop, 1 ke bawah di HP */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    /* Otomatis 1 kolom di HP, dan akan diatur menjadi 2 kolom di desktop lewat @media di bawah */
+    grid-template-columns: 1fr;
+    gap: 20px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 15px;
 }
 
 .exp-card {
@@ -412,6 +416,9 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
     border-radius: 1.5rem;
     overflow: hidden;
     transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column; /* Mengunci foto di atas, teks di bawah */
+    height: 100%;
 }
 
 .exp-card:hover {
@@ -419,134 +426,104 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
     transform: translateY(-5px);
 }
 
-/* Bagian Foto */
+/* --- Bagian Foto (Dibuat Responsive & Pas) --- */
 .exp-img {
     width: 100%;
-    height: 300px; /* Tinggi foto diseragamkan */
+    height: auto; /* Mengikuti proporsi asli foto agar tidak terpotong */
     overflow: hidden;
+    display: block;
 }
 
 .exp-img img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Agar foto tidak gepeng */
+    height: auto; 
+    object-fit: contain; /* Menjamin seluruh isi foto orang masuk utuh tanpa kepotong */
+    display: block;
     transition: transform 0.4s ease;
 }
 
 .exp-card:hover .exp-img img {
-    transform: scale(1.05); /* Efek zoom tipis saat kursor diarahkan */
+    transform: scale(1.03); /* Efek zoom tipis */
 }
 
-/* Bagian Teks */
+/* --- Bagian Konten Teks (Merapatkan Jarak) --- */
 .exp-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.exp-date {
-    display: inline-block;
-    color: var(--accent);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.exp-content h3 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.exp-content h4 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #ffffff;
-    margin-bottom: 1rem;
-}
-
-.exp-content p {
-    color: var(--muted);
-    font-size: 1.45rem;
-    line-height: 1;
-}
-
-/* --- TAMPILAN DEFAULT (UNTUK HP / MOBILE) --- */
-.experience-grid {
-  display: grid;
-  /* Membuat 1 kolom ke bawah secara otomatis */
-  grid-template-columns: 1fr; 
-  /* Jarak antar kotak experience */
-  gap: 20px; 
-  padding: 15px;
-}
-
-/* Styling dasar untuk kartu / kotak experience (bisa kamu hias sendiri) */
-.experience-card {
-  background-color: #f9f9f9;
-  border-left: 4px solid #007acc; /* Warna khas VS Code */
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.experience-card h3 {
-  margin-top: 0;
-  color: #333;
-}
-
-.company {
-  font-weight: bold;
-  color: #faf8f8;
-  font-size: 5rem;
-}
-
-.exp-list {
-    margin: 10px 0 0 0;
-    padding-left: 20px; /* Memberikan ruang untuk angka agar tidak terpotong */
-}
-
-.exp-list li {
-    font-size: 1.5rem;
-    color: #ffffff;
-    line-height: 1.5;
-    margin-bottom: 8px; /* Memberikan jarak antar poin angka ke bawah */
-}
-
-/* Menghilangkan margin bawah pada poin terakhir agar kartu tidak kepanjangan */
-.exp-list li:last-child {
-    margin-bottom: 0;
-}
-
+/* Mengatur tanggal merah agar pas menempel di bawah foto */
 .exp-date {
     display: block;
     font-size: 1.3rem;
-    color: #b74b4b; /* Warna khas VS Code */
-    margin-bottom: 2px; /* Jarak rapat dengan lokasi di bawahnya */
+    color: #b74b4b; 
+    font-weight: 600;
+    margin-top: 0 !important;
+    margin-bottom: 2px !important; /* Jarak sangat rapat dengan lokasi */
 }
 
+/* Mengatur lokasi di bawah tanggal */
 .exp-location {
-    display: block; /* Memaksa teks lokasi turun ke bawah tahun */
+    display: block; 
     font-size: 1.3rem;
-    color: #b74b4b; /* Warna sedikit berbeda atau bisa disamakan dengan warna tahun */
+    color: #b74b4b; 
     font-weight: 500;
-    margin-bottom: 8px; /* Jarak sebelum masuk ke judul h3 */
+    margin-bottom: 10px !important; /* Jarak sebelum masuk ke judul h3 */
 }
 
-/* --- TAMPILAN DESKTOP (Lebar layar mulai dari 768px ke atas) --- */
+/* Judul Posisi Kerja (Junior GIS Surveyor) */
+.exp-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 5px !important;
+}
+
+/* Nama Perusahaan (LBH KALBAR) */
+.exp-content h4 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 12px !important;
+}
+
+/* --- Bagian List Poin Angka Deskripsi Tugas --- */
+.exp-list {
+    margin: 0;
+    padding-left: 20px; /* Ruang agar angka tidak keluar dari kotak */
+}
+
+.exp-list li {
+    font-size: 1.45rem;
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 8px; 
+}
+
+.exp-list li:last-child {
+    margin-bottom: 0; /* Menghilangkan jarak ekstra di poin terakhir */
+}
+
+
+/* ==========================================================================
+   --- TAMPILAN DESKTOP (Lebar layar mulai dari 768px ke atas) ---
+   ========================================================================== */
 @media (min-width: 768px) {
   .experience-grid {
-    /* Mengubah susunan menjadi tepat 2 kolom kesamping, sisanya otomatis ke bawah */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 25px; /* Jarak sedikit diperlebar di desktop */
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr); /* Tepat 2 kolom sejajar kesamping */
+    gap: 25px; 
   }
-}
-/* Cari class atau tag selector gambar Anda, lalu sesuaikan seperti ini: */
-.experience-grid img, 
-.card-experience img {
-  width: 100%;          /* Lebar gambar penuh mengikuti kotak HP */
-  height: auto;         /* Tinggi otomatis menyesuaikan proporsi foto asli */
-  object-fit: contain;  /* Menjamin seluruh isi foto masuk dan tidak terpotong */
-  border-radius: 8px;   /* Menjaga sudut foto tetap tumpul agar rapi */
+
+  .exp-img {
+    height: 250px; /* Di laptop, tinggi diseragamkan sedikit agar sejajar rapi */
+  }
+  
+  .exp-img img {
+    height: 100%;
+    object-fit: cover; /* Di laptop di-cover agar memenuhi kotak kartu sejajar */
+  }
 }
 
 
