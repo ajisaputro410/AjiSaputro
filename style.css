@@ -396,18 +396,15 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
 }
 
 /* =======EXPERIENCE SECTION (CARD DENGAN FOTO)====================================================== */
-/* ==========================================================================
-   EXPERIENCE SECTION (CARD DENGAN FOTO) - BERLAKU DI SEMUA TAMPILAN
-   ========================================================================== */
 .experience-grid {
     display: grid;
-    /* Otomatis 1 kolom di HP, dan akan diatur menjadi 2 kolom di desktop lewat @media di bawah */
     grid-template-columns: 1fr;
     gap: 20px;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
     padding: 15px;
+    box-sizing: border-box; /* Mencegah elemen meluber keluar layar HP */
 }
 
 .exp-card {
@@ -417,7 +414,7 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
     overflow: hidden;
     transition: all 0.4s ease;
     display: flex;
-    flex-direction: column; /* Mengunci foto di atas, teks di bawah */
+    flex-direction: column;
     height: 100%;
 }
 
@@ -426,84 +423,86 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
     transform: translateY(-5px);
 }
 
-/* --- Bagian Foto (Dibuat Responsive & Pas) --- */
+/* --- Bagian Foto (Default untuk HP) --- */
 .exp-img {
     width: 100%;
-    height: auto; /* Mengikuti proporsi asli foto agar tidak terpotong */
+    height: 200px; /* Dikunci 200px di HP agar proporsional dan tidak ceper */
     overflow: hidden;
     display: block;
+    background-color: #050505;
 }
 
 .exp-img img {
     width: 100%;
-    height: auto; 
-    object-fit: contain; /* Menjamin seluruh isi foto orang masuk utuh tanpa kepotong */
+    height: 100%; 
+    object-fit: cover; /* Di HP foto tim akan memenuhi kotak dengan rapi tanpa gepeng */
     display: block;
     transition: transform 0.4s ease;
 }
 
 .exp-card:hover .exp-img img {
-    transform: scale(1.03); /* Efek zoom tipis */
+    transform: scale(1.03);
 }
 
-/* --- Bagian Konten Teks (Merapatkan Jarak) --- */
+/* --- Bagian Konten Teks --- */
 .exp-content {
-    padding: 1.5rem;
+    padding: 1.2rem; /* Diperkecil sedikit dari 1.5rem agar pas di layar ramping Infinix */
     display: flex;
     flex-direction: column;
 }
 
-/* Mengatur tanggal merah agar pas menempel di bawah foto */
 .exp-date {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #b74b4b; 
     font-weight: 600;
     margin-top: 0 !important;
-    margin-bottom: 2px !important; /* Jarak sangat rapat dengan lokasi */
+    margin-bottom: 2px !important;
 }
 
-/* Mengatur lokasi di bawah tanggal */
 .exp-location {
     display: block; 
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #b74b4b; 
     font-weight: 500;
-    margin-bottom: 10px !important; /* Jarak sebelum masuk ke judul h3 */
+    margin-bottom: 8px !important;
 }
 
-/* Judul Posisi Kerja (Junior GIS Surveyor) */
+/* Judul Kerja Dioptimalkan untuk HP */
 .exp-content h3 {
-    font-size: 2rem;
+    font-size: 1.6rem; /* Diturunkan dari 2rem agar pas di layar HP */
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 5px !important;
+    line-height: 1.2;
 }
 
-/* Nama Perusahaan (LBH KALBAR) */
+/* Nama Perusahaan Dioptimalkan untuk HP */
 .exp-content h4 {
-    font-size: 1.6rem;
+    font-size: 1.4rem; /* Diturunkan dari 1.6rem agar seimbang di HP */
     font-weight: 500;
     color: #ffffff;
     margin-top: 0;
     margin-bottom: 12px !important;
 }
 
-/* --- Bagian List Poin Angka Deskripsi Tugas --- */
+/* --- Bagian List Poin Deskripsi (Anti Terpotong di Infinix) --- */
 .exp-list {
     margin: 0;
-    padding-left: 20px; /* Ruang agar angka tidak keluar dari kotak */
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 
 .exp-list li {
-    font-size: 1.45rem;
+    font-size: 1.3rem; /* Disesuaikan agar nyaman dibaca di genggaman tangan */
     color: #ffffff;
     line-height: 1.4;
     margin-bottom: 8px; 
+    word-break: break-word; /* Mengunci kata panjang agar otomatis turun, tidak menembus batas layar */
 }
 
 .exp-list li:last-child {
-    margin-bottom: 0; /* Menghilangkan jarak ekstra di poin terakhir */
+    margin-bottom: 0;
 }
 
 
@@ -512,19 +511,32 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
    ========================================================================== */
 @media (min-width: 768px) {
   .experience-grid {
-    grid-template-columns: repeat(2, 1fr); /* Tepat 2 kolom sejajar kesamping */
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px; 
+    padding: 0; /* Mengembalikan padding agar simetris di monitor laptop */
   }
 
   .exp-img {
-    height: 250px; /* Di laptop, tinggi diseragamkan sedikit agar sejajar rapi */
+    height: 250px; /* Di laptop, tinggi foto dinaikkan agar terlihat megah */
   }
   
   .exp-img img {
-    height: 100%;
-    object-fit: cover; /* Di laptop di-cover agar memenuhi kotak kartu sejajar */
+    object-fit: cover;
+  }
+
+  .exp-content {
+    padding: 1.5rem; /* Mengembalikan kenyamanan jarak teks di layar lebar */
+  }
+
+  .exp-content h3 {
+    font-size: 2rem; /* Mengembalikan ukuran font asli di laptop */
+  }
+
+  .exp-content h4 {
+    font-size: 1.6rem;
   }
 }
+
 
 
 /* =========================FAQ Q&A SECTION============================================= */
