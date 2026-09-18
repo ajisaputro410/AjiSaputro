@@ -540,6 +540,15 @@ span{color:var(--accent)}.home-content h3{font-size:4rem;margin-bottom:1rem;font
     margin: 0 auto;
   }
 }
+/* Cari class atau tag selector gambar Anda, lalu sesuaikan seperti ini: */
+.experience-grid img, 
+.card-experience img {
+  width: 100%;          /* Lebar gambar penuh mengikuti kotak HP */
+  height: auto;         /* Tinggi otomatis menyesuaikan proporsi foto asli */
+  object-fit: contain;  /* Menjamin seluruh isi foto masuk dan tidak terpotong */
+  border-radius: 8px;   /* Menjaga sudut foto tetap tumpul agar rapi */
+}
+
 
 /* =========================FAQ Q&A SECTION============================================= */
 
