@@ -338,6 +338,17 @@ span {
     40%, 60% { width: 0; } /* Teks terbuka semua (selesai diketik) */
 }
 
+/* =====================================================
+   MEMBUAT TOMBOL HOME KE TENGAH KHUSUS DI HP
+====================================================== */
+@media (max-width: 995px) {
+    .home-buttons {
+        justify-content: center; /* Mengatur tombol agar posisinya di tengah secara horizontal */
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
 
 /* GENERAL=========================================================================================== */
 .section{display:flex;flex-direction:column;align-items:center}
