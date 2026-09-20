@@ -154,16 +154,19 @@ header {
     }
 }
 
-.logo{
-    font-size:3rem;
-    color:var(--accent);
-    font-weight:800;
-    cursor:pointer;
-    transition:.5s ease;
+/* =====================================================
+   PERBAIKAN KELAS LOGO HEADER
+====================================================== */
+.logo {
+    font-size: 3rem;
+    color: var(--accent);
+    font-weight: 800;
+    cursor: pointer;
+    transition: .5s ease;
 }
 
-.logo:hover{
-    transform:scale(1.05);
+.logo:hover {
+    transform: scale(1.05);
 }
 
 nav a{
