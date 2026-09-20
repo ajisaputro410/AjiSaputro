@@ -3,20 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Font Awesome untuk ikon -->
+  
+  <!-- Font Awesome untuk Ikon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
   <!-- CSS Utama -->
   <link rel="stylesheet" href="style.css">
+  
   <title>Portfolio Website</title>
+  
+  <style>
+    /* Mencegah layar bocor ke samping di HP (Solusi agar tidak muncul fitur titik 3 / bug scroll) */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    /* Pastikan bar skill memiliki transisi yang mulus dari CSS */
+    .skill-bar span {
+      transition: width 1s ease-in-out;
+    }
+  </style>
 </head>
 <body>
 
   <!-- HEADER & NAVIGASI -->
-    <!-- HEADER & NAVIGASI -->
- <header>
+  <header>
     <a href="#home" class="logo">PORTOFOLIO</a>
     <nav>
-      <!-- UBAH #About Me MENJADI #home DI BAWAH INI -->
       <a href="#home">About Me</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
@@ -25,35 +38,39 @@
       <a href="#FAQ">FAQ</a>
     </nav>
 
-
-    <!-- KODE BARU: Ikon Pengubah Tema diletakkan di sini -->
+    <!-- Ikon Pengubah Tema -->
     <div class="theme-toggle" id="theme-btn">
       <i class="fa-solid fa-moon"></i>
     </div>
 
-    <button class="menu-btn" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+    <!-- Tombol Menu HP (Garis Tiga / Hamburger) -->
+    <button class="menu-btn" aria-label="Open navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
 
-
   <main>
-    <!-- SECTION: HOME (Perkenalan Diri) -->
+    <!-- SECTION: HOME -->
     <section class="home" id="home">
-      <div class="home-img"><img src="main.jpg" alt="Aji Saputro"></div>
+      <div class="home-img">
+        <img src="main.jpg" alt="Aji Saputro">
+      </div>
       <div class="home-content">
         <h1>Hi, It's <span>Aji Saputro</span></h1>
+        
+        <!-- Hapus class typing-text jika kamu benar-benar tidak mau ada efek ngetik ganda -->
+        <!-- Jika masih pakai CSS yang saya berikan sebelumnya, cukup biarkan ini -->
         <h3 class="typing-text">I'm a <span></span></h3>
+        
         <p>Junior Geophysicist and GIS Surveyor with field experience in mineral exploration, geoelectrical surveying, topographic mapping, drilling validation, and environmental assessment. Experienced in processing and interpreting subsurface and geospatial data using QGIS, Global Mapper, and Res2DInv.</p>
         
-<!-- Ikon Media Sosial -->
-<div class="social-icons">
-  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-  <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-  
-  <!-- Tambahkan id="phone-link" di bawah ini -->
-  <a href="tel:+6281253817435" id="phone-link" aria-label="Telpon"><i class="fa-solid fa-phone"></i></a>
-  
-  <a href="mailto:aji.saputro410@gmail.com" aria-label="Gmail"><i class="fa-solid fa-envelope"></i></a>
-</div>
+        <!-- Ikon Media Sosial -->
+        <div class="social-icons">
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="tel:+6281253817435" id="phone-link" aria-label="Telpon"><i class="fa-solid fa-phone"></i></a>
+          <a href="mailto:aji.saputro410@gmail.com" aria-label="Gmail"><i class="fa-solid fa-envelope"></i></a>
+        </div>
 
         <!-- Tombol Aksi (CTA) -->
         <div class="home-buttons">
@@ -63,7 +80,7 @@
       </div>
     </section>
 
-    <!-- SECTION: EDUCATION (Riwayat Pendidikan) -->
+    <!-- SECTION: EDUCATION -->
     <section class="section" id="education">
       <div class="section-title">
         <h2>My <span>Education</span></h2>
@@ -100,14 +117,14 @@
       </div>
     </section>
 
-    <!-- SECTION: SKILLS (Keahlian) -->
+    <!-- SECTION: SKILLS -->
     <section class="section" id="skills">
       <div class="section-title">
         <h2>My <span>Skills</span></h2>
         <p>A combination of field operations, geoscience analysis, GIS, and technical tools.</p>
       </div>
       <div class="skills-wrapper">
-        <!-- Technical Skills (Dilengkapi Bar Persentase) -->
+        <!-- Technical Skills -->
         <div class="skill-group">
           <h3><i class="fa-solid fa-briefcase"></i> Technical Skills</h3>
           <div class="skill-item" data-skill="88">
@@ -140,7 +157,7 @@
           </div>
         </div>
 
-        <!-- Software Skills (Ditampilkan Berupa Tag) -->
+        <!-- Software Skills -->
         <div class="skill-group">
           <h3><i class="fa-solid fa-laptop-code"></i> Software & Professional Skills</h3>
           <div class="skill-tags">
@@ -166,79 +183,66 @@
       </div>
     </section>
 
-    <!-- SECTION: EXPERIENCE (Pengalaman Kerja) -->
-     <!-- ==EXPERIENCE SECTION (WITH PHOTOS)=================================================== -->
-<section class="section" id="experience">
-    <div class="section-title">
+    <!-- SECTION: EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="section-title">
         <h2>My <span>Experience</span></h2>
         <p>Field and technical experience in geophysics, surveying, GIS, and exploration.</p>
-    </div>
-
-    <div class="experience-grid">
-
+      </div>
+      <div class="experience-grid">
         <!-- Experience 1 -->
         <div class="exp-card">
-            <div class="exp-img">
-                <img src="foto-kerja-1.jpeg" alt="Junior GIS Surveyor">
-            </div>
-            <div class="exp-content">
-                <span class="exp-date">Jan 2026 – Jul 2026</span>
-                 <span class="exp-location">Ketapang, Indonesia</span>
-                <h3>Junior GIS Surveyor </h3>
-                <h4>LBH KALBAR</h4>
-                <ol class="exp-list">
-                    <li>Conducted topographic surveys and geospatial mapping across 3 active mining blocks and 2 bauxite processing facilities covering 500+ hectares in Air Upas District, Ketapang Regency.</li>
-                    <li>Monitored surface water quality across 8 major rivers within the bauxite mining concession area to evaluate environmental impact surrounding operations.</li>
-                    <li>Executed soil quality surveys by participating in 4 shallow drilling operations and collecting 8 core samples to document environmental baselines.</li>
-                    <li>Managed and documented 100+ geospatial and field datasets to support spatial analysis, environmental evaluations, and weekly technical reporting.</li>
-                </ol>
-            </div>
+          <div class="exp-img"><img src="foto-kerja-1.jpeg" alt="Junior GIS Surveyor"></div>
+          <div class="exp-content">
+            <span class="exp-date">Jan 2026 – Jul 2026</span>
+            <span class="exp-location">Ketapang, Indonesia</span>
+            <h3>Junior GIS Surveyor </h3>
+            <h4>LBH KALBAR</h4>
+            <ol class="exp-list">
+              <li>Conducted topographic surveys and geospatial mapping across 3 active mining blocks and 2 bauxite processing facilities covering 500+ hectares.</li>
+              <li>Monitored surface water quality across 8 major rivers to evaluate environmental impact.</li>
+              <li>Executed soil quality surveys by participating in 4 shallow drilling operations.</li>
+              <li>Managed and documented 100+ geospatial and field datasets.</li>
+            </ol>
+          </div>
         </div>
 
         <!-- Experience 2 -->
         <div class="exp-card">
-            <div class="exp-img">
-                <img src="foto-kerja-2.jpeg" alt="Field Survey">
-            </div>
-            <div class="exp-content">
-                <span class="exp-date">Jul 2025 – Dec 2025</span>
-                <span class="exp-location">Bengkayang and Sambas, Indonesia</span>
-                <h3>Junior Geophysicist</h3>
-                <h4>AMERTA BUMI PRAKASA LP</h4>
-               <ol class="exp-list">
-    <li>Executed 12 lines of geoelectric surveys and geospatial mapping covering 200+ hectares over a 4-week period to identify subsurface structures and gold-bearing veins in Monterado District, Bengkayang Regency.</li>
-    <li>Conducted 6 lines of geoelectric surveys and topographic mapping across 50+ hectares of quartz and silica sand mining areas in Paloh District, Sambas Regency.</li>
-    <li>Performed 18 systematic exploratory drilling operations up to 10 meters deep (12 points in Monterado, 6 points in Paloh) along survey profiles to validate 2D subsurface resistivity models.</li>
-    <li>Processed and interpreted 15+ geoelectric datasets using Res2DInv within a 1-month timeline to generate accurate 2D subsurface profiles for exploration evaluation.</li>
-    <li>Prepared 2 comprehensive technical reports integrating field data and drilling outcomes to support engineering evaluations and project decisions.</li>
-</ol>
-    </div>
+          <div class="exp-img"><img src="foto-kerja-2.jpeg" alt="Field Survey"></div>
+          <div class="exp-content">
+            <span class="exp-date">Jul 2025 – Dec 2025</span>
+            <span class="exp-location">Bengkayang and Sambas, Indonesia</span>
+            <h3>Junior Geophysicist</h3>
+            <h4>AMERTA BUMI PRAKASA LP</h4>
+            <ol class="exp-list">
+              <li>Executed 12 lines of geoelectric surveys and geospatial mapping covering 200+ hectares.</li>
+              <li>Conducted 6 lines of geoelectric surveys and topographic mapping across 50+ hectares.</li>
+              <li>Performed 18 systematic exploratory drilling operations to validate models.</li>
+              <li>Processed and interpreted 15+ geoelectric datasets using Res2DInv.</li>
+            </ol>
+          </div>
         </div>
 
-                <!-- Experience 3 -->
+        <!-- Experience 3 -->
         <div class="exp-card">
-            <div class="exp-img">
-                <!-- Ganti nama file foto jika ada foto asisten lapangan/kampus -->
-                <img src="foto-kerja-3.jpg" alt="Fieldwork Teaching Assistant">
-            </div>
-            <div class="exp-content">
-                <span class="exp-date">May–June 2023 & May–June 2024</span>
-                <span class="exp-location">Pontianak, Indonesia</span>
-                <h3>Undergraduate Fieldwork Teaching Assistant – Geophysics</h3>
-                <h4>TANJUNGPURA UNIVERSITY</h4>
-                <ol class="exp-list">
-                    <li>Coordinated equipment deployment and facilitated field data acquisition for geoelectric (2023) and hydrological (2024) mapping exercises.</li>
-                    <li>Guided 20+ students through data inversion, processing using Res2DInv, and data quality control (QC).</li>
-                    <li>Instructed students on water resource measurement techniques and mentored final report drafting.</li>
-                </ol>
-            </div>
+          <div class="exp-img"><img src="foto-kerja-3.jpg" alt="Fieldwork Teaching Assistant"></div>
+          <div class="exp-content">
+            <span class="exp-date">May–June 2023 & May–June 2024</span>
+            <span class="exp-location">Pontianak, Indonesia</span>
+            <h3>Undergraduate Fieldwork Teaching Assistant</h3>
+            <h4>TANJUNGPURA UNIVERSITY</h4>
+            <ol class="exp-list">
+              <li>Coordinated equipment deployment and facilitated field data acquisition.</li>
+              <li>Guided 20+ students through data inversion, processing using Res2DInv, and QC.</li>
+              <li>Instructed students on water resource measurement techniques.</li>
+            </ol>
+          </div>
         </div>
+      </div>
+    </section>
 
- 
-    </div>
-</section>
-
-    <!------ SECTION: SERVICES (Layanan yang Ditawarkan) ----------------------------------------->
+    <!-- SECTION: SERVICES -->
     <section class="section" id="services">
       <div class="section-title">
         <h2>My <span>Services</span></h2>
@@ -268,7 +272,7 @@
       </div>
     </section>
 
-    <!-- SECTION: FAQ (Pertanyaan Umum) -->
+    <!-- SECTION: FAQ -->
     <section class="section faq-section" id="FAQ">
       <div class="section-title">
         <h2><span>FAQ</span></h2>
@@ -292,16 +296,8 @@
           <div class="faq-answer"><p>Yes. My experience includes field surveying, geoelectrical surveys, topographic mapping, field data collection, drilling validation, measurement, and technical field support.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-question"><span>What surveying instruments can you operate?</span><i class="fa-solid fa-chevron-down"></i></button>
-          <div class="faq-answer"><p>I have experience operating surveying instruments such as Total Station and Auto Level for land and topographic surveying.</p></div>
-        </div>
-        <div class="faq-item">
           <button class="faq-question"><span>Are you available for professional opportunities?</span><i class="fa-solid fa-chevron-down"></i></button>
           <div class="faq-answer"><p>Yes. I am open to professional opportunities, field survey work, GIS-related projects, geoscience roles, exploration projects, and other opportunities related to my skills and experience.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>How can I contact you?</span><i class="fa-solid fa-chevron-down"></i></button>
-          <div class="faq-answer"><p>You can contact me through email at <a href="mailto:aji.saputro410@gmail.com">aji.saputro410@gmail.com</a> or through my social media profiles available on this portfolio.</p></div>
         </div>
       </div>
     </section>
@@ -312,123 +308,116 @@
     <p>© 2026 Aji Saputro. All Rights Reserved.</p>
   </footer>
 
-  <!-- SCRIPT UTAMA (Navigasi, FAQ, & Animasi Skills) -->
+  <!-- =========================================================================
+       SEMUA JAVASCRIPT DIGABUNG DI SINI (AGAR BERJALAN LANCAR & TIDAK BENTROK)
+       ========================================================================= -->
   <script>
-    // 1. Logika Toggle Menu Mobile
-    const menuBtn = document.querySelector(".menu-btn");
-    const nav = document.querySelector("nav");
-    const navLinks = document.querySelectorAll("nav a");
-
-    menuBtn.addEventListener("click", () => {
-      nav.classList.toggle("active");
-      menuBtn.innerHTML = nav.classList.contains("active") ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("active");
-        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      });
-    });
-
-    // 2. Active State pada Navigasi saat Scroll
-    const sections = document.querySelectorAll("section[id]");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 150) current = section.id;
-      });
-      navLinks.forEach(link => {
-        link.classList.toggle("active", link.getAttribute("href") === "#" + current);
-      });
-    });
-
-    // 3. Logika Accordion untuk Bagian FAQ
-    document.querySelectorAll(".faq-question").forEach(question => {
-      question.addEventListener("click", () => {
-        const currentItem = question.parentElement;
-        document.querySelectorAll(".faq-item").forEach(item => {
-          if (item !== currentItem) item.classList.remove("active");
-        });
-        currentItem.classList.toggle("active");
-      });
-    });
-
-    // 4. JAVASCRIPT : SKILL BAR ANIMATION (OTOMATIS SAAT DI-SCROLL)
     document.addEventListener("DOMContentLoaded", () => {
-        const skillItems = document.querySelectorAll(".skill-item");
-
-        const observerOptions = {
-            threshold: 0.5 // Animasi jalan saat kotak setengah terlihat
-        };
-
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const item = entry.target;
-                const targetValue = parseInt(item.getAttribute("data-skill"));
-                const barSpan = item.querySelector(".skill-bar span");
-                const numberSpan = item.querySelector(".skill-number");
-
-                if (entry.isIntersecting) {
-                    // Animasi Bar
-                    if (barSpan) {
-                        barSpan.style.transition = "width 1s ease-out";
-                        barSpan.style.width = targetValue + "%";
-                    }
-
-                    // Animasi Angka
-                    let currentCount = 0;
-                    const speed = 1000 / (targetValue || 1);
-                    
-                    if (item.intervalId) clearInterval(item.intervalId);
-
-                    item.intervalId = setInterval(() => {
-                        if (currentCount < targetValue) {
-                            currentCount++;
-                            if (numberSpan) numberSpan.textContent = currentCount + "%";
-                        } else {
-                            clearInterval(item.intervalId);
-                        }
-                    }, speed);
-                    
-                } else {
-                    // Reset jika di-scroll ke tempat lain
-                    if (barSpan) {
-                        barSpan.style.transition = "none";
-                        barSpan.style.width = "0%";
-                    }
-                    if (numberSpan) {
-                        numberSpan.textContent = "0%";
-                    }
-                    if (item.intervalId) clearInterval(item.intervalId);
-                }
-            });
-        }, observerOptions);
-
-        skillItems.forEach(item => {
-            skillObserver.observe(item);
-        });
-    });
-  </script>
-
-  <!-- SCRIPT LOGIKA WHATSAPP -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const phoneLink = document.getElementById("phone-link");
       
-      if(phoneLink) {
-          // Mendeteksi apakah pengguna menggunakan HP/Mobile
-          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      // 1. FUNGSI TEMA (GELAP/TERANG) - Memperbaiki tema yang tidak mau pindah
+      const themeBtn = document.getElementById("theme-btn");
+      const themeIcon = themeBtn.querySelector("i");
+      
+      themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        if (document.body.classList.contains("light-theme")) {
+          themeIcon.classList.replace("fa-moon", "fa-sun");
+        } else {
+          themeIcon.classList.replace("fa-sun", "fa-moon");
+        }
+      });
 
+      // 2. FUNGSI MENU MOBILE & NAVIGASI AKTIF SAAT SCROLL
+      const menuBtn = document.querySelector(".menu-btn");
+      const nav = document.querySelector("nav");
+      const navLinks = document.querySelectorAll("nav a");
+      const sections = document.querySelectorAll("section[id]");
+
+      menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        menuBtn.innerHTML = nav.classList.contains("active") ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        });
+      });
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+          if (window.scrollY >= section.offsetTop - 150) current = section.id;
+        });
+        navLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + current);
+        });
+      });
+
+      // 3. FUNGSI ACCORDION FAQ
+      document.querySelectorAll(".faq-question").forEach(question => {
+        question.addEventListener("click", () => {
+          const currentItem = question.parentElement;
+          document.querySelectorAll(".faq-item").forEach(item => {
+            if (item !== currentItem) item.classList.remove("active");
+          });
+          currentItem.classList.toggle("active");
+        });
+      });
+
+      // 4. FUNGSI ANIMASI PROGRESS BAR SKILLS - Memperbaiki skill yang tidak bergulir
+      const skillItems = document.querySelectorAll(".skill-item");
+      const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const item = entry.target;
+          const targetValue = parseInt(item.getAttribute("data-skill"));
+          const barSpan = item.querySelector(".skill-bar span");
+          const numberSpan = item.querySelector(".skill-number");
+
+          if (entry.isIntersecting) {
+            // Jalankan animasi bar & persentase jika baru masuk layar
+            if (!item.classList.contains("animated")) {
+              item.classList.add("animated");
+              
+              barSpan.style.width = targetValue + "%";
+              
+              let currentCount = 0;
+              const speed = 1500 / targetValue; // Durasi animasi
+              
+              let intervalId = setInterval(() => {
+                if (currentCount < targetValue) {
+                  currentCount++;
+                  numberSpan.textContent = currentCount + "%";
+                } else {
+                  clearInterval(intervalId);
+                }
+              }, speed);
+            }
+          } else {
+            // Reset kembali ke 0% jika layarnya di-scroll jauh
+            item.classList.remove("animated");
+            barSpan.style.width = "0%";
+            numberSpan.textContent = "0%";
+          }
+        });
+      }, { threshold: 0.6 }); // Akan berjalan ketika kotak skill sudah 60% masuk di layar
+
+      skillItems.forEach(item => {
+        skillObserver.observe(item);
+      });
+
+      // 5. FUNGSI LOGIKA WHATSAPP PANGGILAN
+      const phoneLink = document.getElementById("phone-link");
+      if(phoneLink) {
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
           if (!isMobile) {
-            // Jika dibuka di Laptop/PC, buka di tab baru
             phoneLink.href = "https://wa.me/6281253817435"; 
             phoneLink.target = "_blank"; 
           }
       }
+
     });
   </script>
-
-  <script src="script.js"></script>
 </body>
 </html>
