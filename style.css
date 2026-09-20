@@ -121,11 +121,34 @@ nav a:hover,nav a.active{
     z-index: 101;
 }
 
-/* Pengaturan khusus saat dibuka di HP */
-@media(max-width: 995px) {
-    .theme-toggle {
-        margin-left: 0;
-        margin-right: 2rem; 
+/* =====================================================
+   PENGATURAN POSISI TOMBOL TEMA (DI LUAR MENU HP)
+====================================================== */
+
+/* Tampilan Laptop/Desktop: Mengikuti alur navigasi */
+nav .theme-toggle {
+    display: inline-flex;
+}
+
+/* Tampilan HP (Layar di bawah 995px) */
+@media (max-width: 995px) {
+    /* Keluarkan tombol tema dari nav dan letakkan berdampingan dengan tombol garis tiga */
+    header .theme-toggle {
+        position: absolute;
+        right: 75px; /* Mengatur jarak dari tombol garis tiga di sebelah kanan */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 102;
+    }
+
+    /* Pastikan tombol garis tiga ada di paling kanan */
+    header .menu-btn {
+        position: absolute;
+        right: 7%;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 
