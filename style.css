@@ -107,19 +107,26 @@ nav a:hover,nav a.active{
     border-bottom:3px solid var(--accent)
 }
 
+/* =====================================================
+   PENGATURAN JARAK TOMBOL GANTI TEMA
+====================================================== */
 .theme-toggle {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: var(--accent);
     cursor: pointer;
-    margin-left: 3.5rem;
+    margin-left: 4rem; /* Sesuaikan angka ini: tambah besar (misal 5rem) jika ingin lebih jauh, kecilkan jika ingin lebih dekat */
     transition: transform 0.3s ease;
     display: inline-flex;
     align-items: center;
     z-index: 101;
 }
 
-.theme-toggle:hover {
-    transform: scale(1.15);
+/* Pengaturan khusus saat dibuka di HP */
+@media(max-width: 995px) {
+    .theme-toggle {
+        margin-left: 0;
+        margin-right: 2rem; 
+    }
 }
 
 .menu-btn{
