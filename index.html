@@ -12,18 +12,28 @@
 <body>
 
   <!-- HEADER & NAVIGASI -->
-  <header>
+    <!-- HEADER & NAVIGASI -->
+ <header>
     <a href="#home" class="logo">PORTOFOLIO</a>
     <nav>
-      <a href="#home" class="active">Home</a>
+      <!-- UBAH #About Me MENJADI #home DI BAWAH INI -->
+      <a href="#home">About Me</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#services">Services</a>
       <a href="#FAQ">FAQ</a>
     </nav>
+
+
+    <!-- KODE BARU: Ikon Pengubah Tema diletakkan di sini -->
+    <div class="theme-toggle" id="theme-btn">
+      <i class="fa-solid fa-moon"></i>
+    </div>
+
     <button class="menu-btn" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
   </header>
+
 
   <main>
     <!-- SECTION: HOME (Perkenalan Diri) -->
@@ -302,7 +312,7 @@
     <p>© 2026 Aji Saputro. All Rights Reserved.</p>
   </footer>
 
-  <!-- SCRIPT UTAMA (Navigasi & Animasi) -->
+  <!-- SCRIPT UTAMA (Navigasi, FAQ, & Animasi Skills) -->
   <script>
     // 1. Logika Toggle Menu Mobile
     const menuBtn = document.querySelector(".menu-btn");
@@ -344,58 +354,81 @@
       });
     });
 
-    // 4. Animasi Hover pada Progress Bar Skills
+    // 4. JAVASCRIPT : SKILL BAR ANIMATION (OTOMATIS SAAT DI-SCROLL)
     document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".skill-item").forEach(item => {
-        item.style.cursor = "pointer";
-        const targetValue = parseInt(item.getAttribute("data-skill"));
-        const barSpan = item.querySelector(".skill-bar span");
-        const numberSpan = item.querySelector(".skill-number");
-        let intervalId = null;
+        const skillItems = document.querySelectorAll(".skill-item");
 
-        item.addEventListener("mouseenter", () => {
-          if (barSpan) {
-            barSpan.style.transition = "width 0.6s linear";
-            barSpan.style.width = targetValue + "%";
-          }
-          clearInterval(intervalId);
-          let currentCount = 0;
-          const speed = 600 / targetValue;
-          
-          intervalId = setInterval(() => {
-            if (currentCount < targetValue) {
-              currentCount++;
-              if (numberSpan) numberSpan.textContent = currentCount + "%";
-            } else {
-              clearInterval(intervalId);
-            }
-          }, speed);
-        });
+        const observerOptions = {
+            threshold: 0.5 // Animasi jalan saat kotak setengah terlihat
+        };
 
-        item.addEventListener("mouseleave", () => {
-          clearInterval(intervalId);
-          if (barSpan) {
-            barSpan.style.transition = "none";
-            barSpan.style.width = "0%";
-          }
-          if (numberSpan) numberSpan.textContent = "0%";
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const item = entry.target;
+                const targetValue = parseInt(item.getAttribute("data-skill"));
+                const barSpan = item.querySelector(".skill-bar span");
+                const numberSpan = item.querySelector(".skill-number");
+
+                if (entry.isIntersecting) {
+                    // Animasi Bar
+                    if (barSpan) {
+                        barSpan.style.transition = "width 1s ease-out";
+                        barSpan.style.width = targetValue + "%";
+                    }
+
+                    // Animasi Angka
+                    let currentCount = 0;
+                    const speed = 1000 / (targetValue || 1);
+                    
+                    if (item.intervalId) clearInterval(item.intervalId);
+
+                    item.intervalId = setInterval(() => {
+                        if (currentCount < targetValue) {
+                            currentCount++;
+                            if (numberSpan) numberSpan.textContent = currentCount + "%";
+                        } else {
+                            clearInterval(item.intervalId);
+                        }
+                    }, speed);
+                    
+                } else {
+                    // Reset jika di-scroll ke tempat lain
+                    if (barSpan) {
+                        barSpan.style.transition = "none";
+                        barSpan.style.width = "0%";
+                    }
+                    if (numberSpan) {
+                        numberSpan.textContent = "0%";
+                    }
+                    if (item.intervalId) clearInterval(item.intervalId);
+                }
+            });
+        }, observerOptions);
+
+        skillItems.forEach(item => {
+            skillObserver.observe(item);
         });
-      });
     });
   </script>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const phoneLink = document.getElementById("phone-link");
-    
-    // Mendeteksi apakah pengguna menggunakan HP/Mobile
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-    if (!isMobile) {
-      // Jika dibuka di Laptop/PC, ubah fungsinya ke WhatsApp Web/Desktop
-      phoneLink.href = "https://wa.me";
-      phoneLink.target = "_blank"; // Supaya membuka tab baru di laptop
-    }
-  });
-</script>
+  <!-- SCRIPT LOGIKA WHATSAPP -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const phoneLink = document.getElementById("phone-link");
+      
+      if(phoneLink) {
+          // Mendeteksi apakah pengguna menggunakan HP/Mobile
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+          if (!isMobile) {
+            // Jika dibuka di Laptop/PC, buka di tab baru
+            phoneLink.href = "https://wa.me/6281253817435"; 
+            phoneLink.target = "_blank"; 
+          }
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
