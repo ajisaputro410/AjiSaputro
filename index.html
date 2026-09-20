@@ -210,7 +210,7 @@
 
         <!-- Experience 2 -->
         <div class="exp-card">
-          <div class="exp-img"><img src="foto-kerja-2.jpeg" alt="Field Survey"></div>
+          <div class="exp-img"><img src="foto-kerja-2.png" alt="Field Survey"></div>
           <div class="exp-content">
             <span class="exp-date">Jul 2025 – Dec 2025</span>
             <span class="exp-location">Bengkayang and Sambas, Indonesia</span>
@@ -310,12 +310,12 @@
   </footer>
 
   <!-- =========================================================================
-       SEMUA JAVASCRIPT DIGABUNG DI SINI (AGAR BERJALAN LANCAR & TIDAK BENTROK)
+       SEMUA JAVASCRIPT DIGABUNG DI SINI (BERSIH & TANPA BENTROK)
        ========================================================================= -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       
-      // 1. FUNGSI TEMA (GELAP/TERANG) - Memperbaiki tema yang tidak mau pindah
+      // 1. FUNGSI TEMA (GELAP/TERANG)
       const themeBtn = document.getElementById("theme-btn");
       const themeIcon = themeBtn.querySelector("i");
       
@@ -367,7 +367,7 @@
         });
       });
 
-      // 4. FUNGSI ANIMASI PROGRESS BAR SKILLS - Memperbaiki skill yang tidak bergulir
+      // 4. FUNGSI ANIMASI PROGRESS BAR SKILLS (BAR & PERSEN SELESAI DALAM 1 DETIK)
       const skillItems = document.querySelectorAll(".skill-item");
       const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -381,10 +381,14 @@
             if (!item.classList.contains("animated")) {
               item.classList.add("animated");
               
+              // Garis bar bergerak mulus dalam 1 detik (1s)
+              barSpan.style.transition = "width 1s ease-out";
               barSpan.style.width = targetValue + "%";
               
+              // Angka persen menghitung dari 0 ke max dalam waktu total 1 detik (1000ms)
               let currentCount = 0;
-              const speed = 1000 / targetValue; // Durasi animasi
+              const totalDuration = 1000; 
+              const speed = totalDuration / targetValue;
               
               let intervalId = setInterval(() => {
                 if (currentCount < targetValue) {
@@ -398,11 +402,12 @@
           } else {
             // Reset kembali ke 0% jika layarnya di-scroll jauh
             item.classList.remove("animated");
+            barSpan.style.transition = "none";
             barSpan.style.width = "0%";
             numberSpan.textContent = "0%";
           }
         });
-      }, { threshold: 0.6 }); // Akan berjalan ketika kotak skill sudah 60% masuk di layar
+      }, { threshold: 0.6 }); // Berjalan ketika kotak skill sudah 60% masuk di layar
 
       skillItems.forEach(item => {
         skillObserver.observe(item);

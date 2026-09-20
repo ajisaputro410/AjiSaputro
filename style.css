@@ -3,13 +3,16 @@
 /* ========================================================
    SISTEM VARIABEL WARNA (TEMA GELAP & TERANG)
 =========================================================== */
+/* ========================================================
+   SISTEM VARIABEL WARNA (TEMA GELAP & TERANG)
+=========================================================== */
 :root {
     --accent: #b74b4b;
     
-    /* 🌙 Warna Default (Tema Gelap) */
+    /* 🌙 Tema Gelap: Warna transparan (0.4) agar tembus pandang */
     --bg: #000000;
     --text-color: #ffffff;
-    --header-bg: rgba(0, 0, 0, 0.75);
+    --header-bg: rgba(0, 0, 0, 0.4); 
     --muted: #bdbdbd;
     --border-color: #272727;
     
@@ -20,15 +23,15 @@
 }
 
 body.light-theme {
-    /* ☀️ Warna saat Tema Terang Aktif */
+    /* ☀️ Tema Terang: Warna transparan (0.5) agar tembus pandang */
     --bg: #ffffff;
-    --text-color: #000000; /* Hitam pekat agar mudah dibaca */
-    --header-bg: rgba(255, 255, 255, 0.95);
-    --muted: #222222; /* Abu-abu sangat gelap (hampir hitam) untuk teks deskripsi */
+    --text-color: #000000; 
+    --header-bg: rgba(255, 255, 255, 0.5); 
+    --muted: #222222; 
     --border-color: #cccccc;
     
     /* Elemen Card / Kotak */
-    --card-bg: #f4f4f4; /* Abu-abu terang agar kotak tidak menyatu dengan background putih */
+    --card-bg: #f4f4f4; 
     --hover-bg: #e8e8e8;
     --bar-bg: #d1d1d1;
 }
@@ -62,23 +65,93 @@ body{
 }
 
 /* ========================================================
-   HEADER & NAVIGASI
+   HEADER & NAVIGASI (FULL, BLUR KACA, & TEMBUS PANDANG)
 =========================================================== */
-header{
-    margin-top:20px;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:1rem 10%;
-    background: var(--header-bg);
-    backdrop-filter:blur(8px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:100;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;              /* Membentang penuh selebar layar */
+    margin-top: 0;            /* Menempel sempurna di ujung paling atas */
+    padding: 1.5rem 5%;       
+    background: var(--header-bg); /* Mengambil warna dinamis dari variabel tema */
+    
+    /* Efek Blur Kaca yang Diperkuat */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); /* Support untuk browser Safari/HP */
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
     border-bottom: 1px solid var(--border-color);
     transition: background 0.3s ease, border-color 0.3s ease;
+}
+/* =====================================================
+   PENGATURAN HEADER & TAMPILAN KHUSUS HP (MAX-WIDTH 995px)
+====================================================== */
+@media (max-width: 995px) {
+    header {
+        padding: 1.2rem 7%; /* Menyesuaikan padding agar pas di layar kecil */
+    }
+
+    /* Menu dropdown saat diklik garis tiga */
+    nav {
+        position: absolute;
+        display: none;
+        top: 100%;
+        right: 5%;
+        width: 260px;
+        border-left: 3px solid var(--accent);
+        border-bottom: 3px solid var(--accent);
+        border-bottom-left-radius: 2rem;
+        border-top-left-radius: 2rem;
+        padding: 1.5rem 2rem;
+        background: var(--card-bg); /* Mengikuti tema gelap/terang */
+        backdrop-filter: blur(15px); /* Ikut diberi efek blur */
+        -webkit-backdrop-filter: blur(15px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 1.8rem;
+        margin: 1.5rem 0;
+        width: fit-content;
+    }
+
+    /* Memunculkan tombol menu garis tiga di HP */
+    .menu-btn {
+        display: block;
+        background: transparent;
+        color: var(--accent);
+        font-size: 2.8rem;
+        cursor: pointer;
+    }
+
+    /* Posisi tombol tema di HP (berdampingan di sebelah kiri tombol garis tiga) */
+    header .theme-toggle {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 102;
+        margin-left: 0;
+    }
+
+    /* Posisi tombol garis tiga di pojok kanan atas HP */
+    header .menu-btn {
+        position: absolute;
+        right: 7%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 .logo{
@@ -657,11 +730,13 @@ span {
     left: 0;
 }
 
-/* =======EXPERIENCE SECTION (CARD DENGAN FOTO)====================================================== */
+/* =====================================================
+   EXPERIENCE SECTION (KARTU LEBIH TINGGI & RATA KE BAWAH)
+====================================================== */
 .experience-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 25px;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -678,6 +753,7 @@ span {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 560px; /* KUNCI: Menentukan tinggi minimal kartu agar memanjang ke bawah secara rapi dan lega */
 }
 
 .exp-card:hover {
@@ -685,9 +761,34 @@ span {
     transform: translateY(-5px);
 }
 
+.exp-content {
+    padding: 1.8rem; /* Memperbesar ruang di dalam kartu agar teks tidak terlalu mepet ke bawah */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;    /* Membuat area teks mengisi sisa ruang bawah secara proporsional */
+}
+/* =====================================================
+   MEMPERBESAR KOTAK KARTU (EXP-CARD) AGAR LEBIH LEGA KE BAWAH
+====================================================== */
+.exp-card {
+    background-color: var(--card-bg); /* Warna latar belakang kartu */
+    border-radius: 12px;             /* Membuat sudut kartu melengkung rapi */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    /* TAMBAHKAN INI JIKA INGIN KARTUNYA LEBIH TINGGI / LEGA KE BAWAH: */
+    min-height: 580px;               /* Mengatur tinggi minimal kartu, bisa dinaikkan jadi 600px atau 620px */
+}
+
+
+/* =====================================================
+   PENYESUAIAN FINAL BINGKAI FOTO EXPERIENCE (PAS & RAPI)
+====================================================== */
 .exp-img {
     width: 100%;
-    height: 200px; 
+    height: 200px;          /* Tinggi bingkai disesuaikan agar pas dengan lebar card */
     overflow: hidden;
     display: block;
     background-color: var(--bg);
@@ -695,8 +796,9 @@ span {
 
 .exp-img img {
     width: 100%;
-    height: 100%; 
-    object-fit: cover; 
+    height: 100%;
+    object-fit: cover;      
+    object-position: center; /* KUNCI: Menggeser posisi foto ke bawah (angka 70% bisa dinaikkan jadi 80% jika ingin lebih turun lagi) */
     display: block;
     transition: transform 0.4s ease;
 }
