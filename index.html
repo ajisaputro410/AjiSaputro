@@ -36,11 +36,11 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 110px;
+      scroll-padding-top: 130px;
     }
 
     main > section {
-      scroll-margin-top: 110px;
+      scroll-margin-top: 130px;
     }
 
     .skill-bar span {
@@ -50,14 +50,16 @@
       transition: width 1s ease-in-out;
     }
 
-    /* Six navigation items */
-    header nav {
-      gap: clamp(10px, 1.5vw, 24px);
-    }
+/* Six navigation items */
+header nav {
+  gap: clamp(24px, 2.5vw, 38px);
+  justify-content: flex-end;
+}
 
-    header nav a {
-      white-space: nowrap;
-    }
+header nav a {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
     /* Additional skill information */
     .skills-extra {
@@ -126,15 +128,15 @@
 
     @media (max-width: 768px) {
       html {
-        scroll-padding-top: 85px;
+        scroll-padding-top: 95px;
       }
 
       main > section {
-        scroll-margin-top: 85px;
+        scroll-margin-top: 95px;
       }
 
       header nav.active {
-        max-height: calc(100dvh - 85px);
+        max-height: calc(100dvh - 95px);
         overflow-y: auto;
       }
 
@@ -412,114 +414,109 @@
       </div>
 
       <div class="skills-wrapper">
+<!--Technical skills, surveying instruments, geoscience analysis, GIS, and professional software tools-->
+<div class="skill-group">
+  <h3>
+    <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+    Technical Skills
+  </h3>
 
-        <div class="skill-group">
-          <h3>
-            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-            Technical Skills
-          </h3>
+  <div class="skill-item">
+    <div class="skill-info">
+      <span>
+        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+        GIS &amp; Mapping
+      </span>
+      <span class="skill-level">Advanced</span>
+    </div>
+    <div class="skill-bar">
+      <span style="width: 90%"></span>
+    </div>
+  </div>
 
-          <div class="skill-item" data-skill="88">
-            <div>
-              <span>
-                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-                GIS &amp; Mapping
-              </span>
-              <span class="skill-number">88%</span>
-            </div>
-            <div class="skill-bar">
-              <span style="width: 88%"></span>
-            </div>
-          </div>
+  <div class="skill-item">
+    <div class="skill-info">
+      <span>
+        <i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
+        Land Surveying
+      </span>
+      <span class="skill-level">Proficient</span>
+    </div>
+    <div class="skill-bar">
+      <span style="width: 70%"></span>
+    </div>
+  </div>
 
-          <div class="skill-item" data-skill="82">
-            <div>
-              <span>
-                <i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
-                Land Surveying
-              </span>
-              <span class="skill-number">82%</span>
-            </div>
-            <div class="skill-bar">
-              <span style="width: 82%"></span>
-            </div>
-          </div>
+  <div class="skill-item">
+    <div class="skill-info">
+      <span>
+        <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
+        Topographic Mapping
+      </span>
+      <span class="skill-level">Proficient</span>
+    </div>
+    <div class="skill-bar">
+      <span style="width: 80%"></span>
+    </div>
+  </div>
 
-          <div class="skill-item" data-skill="90">
-            <div>
-              <span>
-                <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
-                Topographic Mapping
-              </span>
-              <span class="skill-number">90%</span>
-            </div>
-            <div class="skill-bar">
-              <span style="width: 90%"></span>
-            </div>
-          </div>
+  <div class="skill-item">
+    <div class="skill-info">
+      <span>
+        <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+        Geophysical Data Processing
+      </span>
+      <span class="skill-level">Intermediate</span>
+    </div>
+    <div class="skill-bar">
+      <span style="width: 50%"></span>
+    </div>
+  </div>
 
-          <div class="skill-item" data-skill="78">
-            <div>
-              <span>
-                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-                Geophysical Data Processing
-              </span>
-              <span class="skill-number">78%</span>
-            </div>
-            <div class="skill-bar">
-              <span style="width: 78%"></span>
-            </div>
-          </div>
+  <div class="skill-item">
+    <div class="skill-info">
+      <span>
+        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+        Electrical Resistivity/IP
+      </span>
+      <span class="skill-level">Proficient</span>
+    </div>
+    <div class="skill-bar">
+      <span style="width: 80%"></span>
+    </div>
+  </div>
 
-          <div class="skill-item" data-skill="82">
-            <div>
-              <span>
-                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                Electrical Resistivity/IP
-              </span>
-              <span class="skill-number">82%</span>
-            </div>
-            <div class="skill-bar">
-              <span style="width: 82%"></span>
-            </div>
-          </div>
+  <div class="skill-item">
+    <div class="skill-info">
+      <span>
+        <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
+        Spatial Data Analysis
+      </span>
+      <span class="skill-level">Intermediate</span>
+    </div>
+    <div class="skill-bar">
+      <span style="width: 60%"></span>
+    </div>
+  </div>
 
-          <div class="skill-item" data-skill="84">
-            <div>
-              <span>
-                <i
-                  class="fa-solid fa-magnifying-glass-chart"
-                  aria-hidden="true"
-                ></i>
-                Spatial Data Analysis
-              </span>
-              <span class="skill-number">84%</span>
-            </div>
-            <div class="skill-bar">
-              <span style="width: 84%"></span>
-            </div>
-          </div>
+  <div class="skill-item">
+    <div class="skill-info">
+      <span>
+        <i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i>
+        Environmental Monitoring
+      </span>
+      <span class="skill-level">Intermediate</span>
+    </div>
+    <div class="skill-bar">
+      <span style="width: 50%"></span>
+    </div>
+  </div>
 
-          <div class="skill-item" data-skill="77">
-            <div>
-              <span>
-                <i
-                  class="fa-solid fa-temperature-arrow-up"
-                  aria-hidden="true"
-                ></i>
-                Environmental Monitoring
-              </span>
-              <span class="skill-number">77%</span>
-            </div>
-            <div class="skill-bar">
-              <span style="width: 77%"></span>
-            </div>
-          </div>
-
-          <p class="skills-note">
-            Skill percentages represent self-assessed proficiency.
-          </p>
-        </div>
+  <p class="skills-note">
+    Skill levels reflect practical experience and familiarity
+    with relevant tools, methods, and technical workflows.
+  </p>
+</div>
 
         <div class="skill-group">
           <h3>

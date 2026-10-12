@@ -77,24 +77,28 @@ img {
 /* =====================================================
    3. HEADER DAN NAVIGASI
 ===================================================== */
-
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 7rem;
-    padding: 1.5rem 5%;
+    min-height: 8rem;
+    padding: 1.8rem 5%;
+    box-sizing: border-box;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
+
     z-index: 1000;
     background: var(--header-bg);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border-color);
-    transition: background 0.3s ease, border-color 0.3s ease;
+
+    transition: background 0.3s ease,
+                border-color 0.3s ease;
 }
 
 .logo {
@@ -114,15 +118,17 @@ nav {
     display: flex;
     align-items: center;
     gap: 2.5rem;
+    flex-wrap: nowrap;
 }
 
 nav a {
     display: inline-block;
-    font-size: 1.6rem;
+    white-space: nowrap;
+    font-size: 1.5rem;
     color: var(--text-color);
     font-weight: 500;
     border-bottom: 3px solid transparent;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.5rem;
     transition: color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -1155,12 +1161,13 @@ body:not(.light-theme) .theme-toggle button {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    nav {
-        gap: 1.5rem;
+    header nav {
+        gap: 2.2rem;
     }
 
-    nav a {
-        font-size: 1.5rem;
+    header nav a {
+        font-size: 1.4rem;
+        white-space: nowrap;
     }
 
     .home {
@@ -1211,7 +1218,7 @@ body:not(.light-theme) .theme-toggle button {
         display: none;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
+        gap: 2rem;
         width: 260px;
         max-width: calc(100vw - 2rem);
         max-height: calc(100vh - 9rem);
