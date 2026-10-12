@@ -1088,10 +1088,316 @@ span {
     .timeline-content{padding:2rem}
 }
 
-/* Perbaikan Global: Menghilangkan kotak putih ikon bulan di layar laptop & HP */
-body:not(.light-theme) .theme-toggle img,
-body:not(.light-theme) .theme-toggle {
+/* ===================================================
+   SOLUSI FINAL & ABSOLUT: KOTAK PUTIH BULAN HILANG TOTAL
+   =================================================== */
+
+/* 1. Paksa gambar bulan membaur dengan latar belakang gelap */
+body:not(.light-theme) img[src*="moon"],
+body:not(.light-theme) .theme-toggle img {
     mix-blend-mode: screen !important;
     background: transparent !important;
     background-color: transparent !important;
+}
+
+/* 2. Bersihkan warna putih dari semua elemen pembungkus tombol tema */
+body:not(.light-theme) .theme-toggle,
+body:not(.light-theme) nav .theme-toggle,
+body:not(.light-theme) header .theme-toggle,
+body:not(.light-theme) .theme-toggle button {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================
+   KODE BARU: GAYA KOTAK LINKEDIN UNTUK EDUKASI
+   ========================================== */
+
+/* Hapus garis vertikal bawaan timeline lama agar tidak menabrak kotak */
+.timeline::before {
+    display: none !important;
+}
+
+/* Membuat item menjadi kotak card gelap */
+.linkedin-style-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    margin-bottom: 2rem !important;
+    padding: 2rem !important;
+}
+
+
+/* ===================================================
+   OPTIMASI GAYA LINKEDIN: MERAMPINGKAN LOGO DAN TEKS
+   =================================================== */
+
+/* 1. Menghilangkan sisa space timeline lama */
+.timeline {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.2rem !important; /* Jarak antar kotak card dikurangi agar lebih rapat */
+}
+
+.timeline::before {
+    display: none !important;
+}
+
+/* 2. Mengatur ukuran kotak pembungkus utama agar lebih pas */
+.linkedin-style-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    padding: 1.2rem 1.6rem !important; /* Diperkecil dari 2rem agar terlihat ramping */
+    margin-bottom: 0 !important;
+}
+
+/* 3. Merapatkan jarak logo dan teks ke samping (Mendekatkan jarak) */
+.linkedin-style-card .timeline-content {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 1.2rem !important; /* Diperkecil dari 2rem agar logo & teks berdekatan */
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* 4. Menyesuaikan dimensi kotak logo seperti standar asli LinkedIn (48px) */
+.timeline-icon-inside {
+    min-width: 48px !important; /* Diperkecil dari 64px agar tidak makan tempat */
+    max-width: 48px !important;
+    height: 48px !important;
+    background-color: #ffffff !important; 
+    border-radius: 4px !important; /* Sudut kotak lebih tegas khas LinkedIn */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    padding: 4px !important;
+    flex-shrink: 0 !important; /* Mencegah kotak logo gepeng atau mengecil */
+}
+
+/* 5. Merapikan teks agar padat dan presisi di sebelah kanan logo */
+.timeline-text-inside {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.2rem !important; /* Jarak baris vertikal teks dipersempit */
+    text-align: left !important;
+}
+
+/* Judul Jurusan / Keahlian */
+.timeline-text-inside h3 {
+    font-size: 1.4rem !important; /* Dioptimasi agar tidak terlalu masif */
+    font-weight: 600 !important;
+    color: var(--text-color) !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+}
+
+/* Nama Instansi / Sekolah */
+.timeline-text-inside h4 {
+    font-size: 1.25rem !important;
+    font-weight: 400 !important;
+    color: var(--text-color) !important;
+    opacity: 0.9 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+}
+
+/* Deskripsi Poin Bulatan di bawahnya */
+.timeline-text-inside p {
+    font-size: 1.15rem !important;
+    color: var(--muted) !important;
+    line-height: 1.4 !important;
+    margin-top: 0.4rem !important;
+}
+
+/* Jaga responsivitas layar HP */
+@media (max-width: 550px) {
+    .linkedin-style-card .timeline-content {
+        flex-direction: row !important; /* Tetap horizontal di HP agar mirip aplikasi LinkedIn */
+        gap: 1rem !important;
+    }
+}
+
+/* Membuat kotak putih pelindung logo sekolah */
+.timeline-icon-inside {
+    min-width: 64px !important;
+    max-width: 64px !important;
+    height: 64px !important;
+    background-color: #ffffff !important; 
+    border-radius: 6px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    padding: 6px !important;
+}
+
+/* Mengatur ukuran gambar logo sekolah di dalam kotak */
+.school-logo-inside {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+/* Mengatur tata letak teks pembungkus judul & deskripsi */
+.timeline-text-inside {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    text-align: left !important;
+}
+
+.timeline-text-inside h3 {
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    color: var(--text-color) !important;
+    margin: 0 !important;
+}
+
+.timeline-text-inside h4 {
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    color: var(--text-color) !important;
+    opacity: 0.9 !important;
+    margin: 0 !important;
+}
+
+.timeline-text-inside p {
+    font-size: 1.3rem !important;
+    color: var(--muted) !important;
+    line-height: 1.6 !important;
+    margin-top: 0.5rem !important;
+}
+
+/* Penyesuaian otomatis jika dibuka di HP agar rapi vertikal */
+@media (max-width: 550px) {
+    .linkedin-style-card .timeline-content {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Merapikan daftar list bahasa di dalam kotak gaya LinkedIn */
+.linkedin-language-list {
+    list-style-type: none !important; /* Menghilangkan bulatan dot list bawaan */
+    padding: 0 !important;
+    margin: 0.5rem 0 0 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.linkedin-language-list li {
+    font-size: 1.3rem !important;
+    color: var(--muted) !important;
+    line-height: 1.6 !important;
+    position: relative;
+}
+
+/* Opsional: Memberikan efek teks tebal sedikit pada nama bahasa */
+.linkedin-language-list li strong {
+    color: var(--text-color) !important;
+    font-weight: 500;
+}
+
+/* ===================================================
+   PENYELARASAN GLOBAL: MENYAMAKAN MARGIN EDUKASI & SKILL
+   =================================================== */
+
+/* 1. Menyamakan pembungkus terluar setiap subsection */
+.education-subsection {
+    width: 100% !important;
+    max-width: 100% !important; /* Memastikan ruang dasarnya sama rata */
+    padding: 0 !important;
+    margin: 0 0 4rem 0 !important; /* Memberikan jarak antar bagian ke bawah sebesar 4rem */
+}
+
+/* 2. Menyelaraskan lebar maksimal kotak Edukasi (Timeline) dan Skill agar presisi */
+.timeline, 
+.skills-wrapper,
+#courses-certifications .cards {
+    width: 100% !important;
+    max-width: 1100px !important; /* Angka 1100px disesuaikan dengan standar grid .skills-wrapper Anda */
+    margin: 0 auto !important; /* Mengunci posisi kontainer tepat di tengah-tengah halaman */
+    padding: 0 !important;
+}
+
+/* 3. Menghilangkan sisa margin/padding bawaan pada item card Edukasi */
+.linkedin-style-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =====================================================
+   FIX EDUCATION & DEVELOPMENT SPACING
+===================================================== */
+
+#education-development > .education-subsection {
+  display: flow-root;
+  margin: 0;
+  padding: 30px 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Garis pemisah Skills dan Courses dari bagian sebelumnya */
+#education-development > .education-subsection
+  + .education-subsection {
+  border-top: 1px solid rgba(128, 128, 128, 0.35);
+}
+
+/* Jarak judul dengan konten */
+#education-development .subsection-title {
+  margin: 0 0 24px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+/* Jarak kartu pendidikan */
+#education-development .timeline {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+/* Jarak antarkelompok skill */
+#education-development .skills-wrapper {
+  gap: 28px;
+}
+
+/* Jarak dan susunan kartu course */
+#education-development #courses-certifications .cards {
+  gap: 20px;
+}
+
+/* Pastikan tidak ada margin berlebihan di akhir section */
+#education-development > .education-subsection:last-child {
+  padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  #education-development > .education-subsection {
+    padding: 24px 0;
+  }
+
+  #education-development .subsection-title {
+    margin-bottom: 18px;
+  }
+
+  #education-development .skills-wrapper,
+  #education-development #courses-certifications .cards {
+    grid-template-columns: 1fr;
+  }
 }
