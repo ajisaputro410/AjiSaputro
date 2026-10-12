@@ -26,98 +26,211 @@
 </head>
 <body>
 
-<!-- HEADER & NAVIGASI -->
-  <header>
-    <a href="#home" class="logo">PORTOFOLIO</a>
-    
-    <!-- Menu Navigasi Biasa -->
-    <nav>
-      <a href="#home">About Me</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#services">Services</a>
-      <a href="#FAQ">FAQ</a>
-    </nav>
+<!------------------------------------------------------------- HEADER & About Me ----------------------------------------------------------------------------------------------->
+<header>
+  <!-- Logo Portfolio -->
+  <a href="#home" class="logo">PORTOFOLIO</a>
 
-    <!-- Tombol Ganti Tema (Diletakkan di LUAR <nav> tapi tetap di dalam <header>) -->
-    <div class="theme-toggle" id="theme-btn">
-      <i class="fa-solid fa-moon"></i>
+  <!-- Menu Navigasi -->
+  <nav>
+    <a href="#home">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#project">Project</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#courses-certifications">Courses/Certifications</a>
+  </nav>
+
+  <!-- Tombol Ganti Tema -->
+  <div class="theme-toggle" id="theme-btn">
+    <i class="fa-solid fa-moon"></i>
+  </div>
+
+  <!-- Tombol Menu Mobile -->
+  <button class="menu-btn" aria-label="Open navigation">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+</header>
+
+<main>
+  <!-- SECTION: HOME -->
+  <section class="home" id="home">
+    <div class="home-img">
+      <img src="main.jpeg" alt="Aji Saputro">
     </div>
 
-    <!-- Tombol Menu HP (Garis Tiga) -->
-    <button class="menu-btn" aria-label="Open navigation">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </header>
+    <div class="home-content">
+      <h1>Hi, It's <span>Aji Saputro</span></h1>
 
-  <main>
-    <!-- SECTION: HOME (Tanpa teks typing yang kedap-kedip) -->
-    <section class="home" id="home">
-      <div class="home-img">
-        <img src="main.jpg" alt="Aji Saputro">
+      <p>
+        Junior Geophysicist and GIS Surveyor with field experience in
+        mineral exploration, geoelectrical surveying, topographic mapping,
+        drilling validation, and environmental assessment. Experienced in
+        processing and interpreting subsurface and geospatial data using
+        QGIS, Global Mapper, and Res2DInv.
+      </p>
+
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="https://linkedin.com"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a href="https://instagram.com"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="tel:+6281253817435" aria-label="Telepon">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+
+        <a href="mailto:aji.saputro410@gmail.com"
+           aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
       </div>
-      <div class="home-content">
-        <h1>Hi, It's <span>Aji Saputro</span></h1>
-        
-        <!-- Baris teks typing sudah dihapus agar tidak kedap-kedip/terpotong -->
-        
-        <p>Junior Geophysicist and GIS Surveyor with field experience in mineral exploration, geoelectrical surveying, topographic mapping, drilling validation, and environmental assessment. Experienced in processing and interpreting subsurface and geospatial data using QGIS, Global Mapper, and Res2DInv.</p>
-        
-        <!-- Ikon Media Sosial -->
-        <div class="social-icons">
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="tel:+6281253817435" id="phone-link" aria-label="Telpon"><i class="fa-solid fa-phone"></i></a>
-          <a href="mailto:aji.saputro410@gmail.com" aria-label="Gmail"><i class="fa-solid fa-envelope"></i></a>
-        </div>
 
-        <!-- Tombol Aksi (CTA) -->
-        <div class="home-buttons">
-          <a href="https://wa.me/6281253817435" class="btn" target="_blank">Contact Me</a>
-          <a href="https://drive.google.com/file/d/1S5rsENEiGH6wEVPF0EAFZ-vFTesC7BuJ/view" class="btn cv-btn" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
-        </div>
+      <!-- Action Buttons -->
+      <div class="home-buttons">
+        <a href="https://wa.me/6281253817435"
+           class="btn"
+           target="_blank"
+           rel="noopener noreferrer">
+          Contact Me
+        </a>
+
+        <a href="https://drive.google.com/file/d/1S5rsENEiGH6wEVPF0EAFZ-vFTesC7BuJ/view"
+           class="btn cv-btn"
+           target="_blank"
+           rel="noopener noreferrer">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          Download CV
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION: EDUCATION -->
-    <section class="section" id="education">
+  <!-- SECTION LAINNYA: EXPERIENCE, PROJECT, SKILLS,
+       EDUCATION, COURSES / CERTIFICATIONS -->
+</main>
+
+<!--------------------------------------------------------------- SECTION: EXPERIENCE ------------------------------------------>
+    <section class="section" id="experience">
       <div class="section-title">
-        <h2>My <span>Education</span></h2>
-        <p>Academic background supporting my work in geophysics, surveying, and geospatial analysis.</p>
+        <h2>My <span>Experience</span></h2>
+        <p>Field and technical experience in geophysics, surveying, GIS, and exploration.</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-icon"><img src="logo-untan.png" alt="Untan Logo" class="school-logo"></div>
-          <div class="timeline-content">
-            <h3>Geophysics</h3>
-            <h4>Tanjungpura University</h4>
-            <p>• Cumulative GPA: 3.28/4.0<br>• Indonesian Geophysics Student Association<br>• Thesis: Comparative Analysis of Weibull and Rayleigh Distributions for Identifying Dominant Wind Speeds in Ketapang Regency.</p>
+      <div class="experience-grid">
+        <!-- Experience 1 -->
+        <div class="exp-card">
+          <div class="exp-img"><img src="foto-kerja-1.jpeg" alt="Junior GIS Surveyor"></div>
+          <div class="exp-content">
+            <span class="exp-date">Jan 2026 – Jul 2026</span>
+            <span class="exp-location">Ketapang, Indonesia</span>
+            <h3>Junior GIS Surveyor </h3>
+            <h4>LBH KALBAR</h4>
+            <ol class="exp-list">
+              <li>Conducted topographic surveys and geospatial mapping across 3 active mining blocks and 2 bauxite processing facilities covering 500+ hectares.</li>
+              <li>Monitored surface water quality across 8 major rivers to evaluate environmental impact.</li>
+              <li>Executed soil quality surveys by participating in 4 shallow drilling operations.</li>
+              <li>Managed and documented 100+ geospatial and field datasets.</li>
+            </ol>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-icon"><img src="logo-smk4.png" alt="SMK 4 Logo" class="school-logo"></div>
-          <div class="timeline-content">
-            <h3>Geomatics Engineering</h3>
-            <h4>SMK Negeri 4 Pontianak</h4>
-            <p>• Vocational Competency Certification (UKK): Competent in Land Surveying<br>• Proficient in operating surveying instruments such as Total Station and Auto Level<br>• Focused on topographic surveying, spatial mapping, contouring, GIS data entry, and coordinate calculations</p>
+
+        <!-- Experience 2 -->
+        <div class="exp-card">
+          <div class="exp-img"><img src="foto-kerja-2.png" alt="Field Survey"></div>
+          <div class="exp-content">
+            <span class="exp-date">Jul 2025 – Dec 2025</span>
+            <span class="exp-location">Bengkayang and Sambas, Indonesia</span>
+            <h3>Junior Geophysicist</h3>
+            <h4>AMERTA BUMI PRAKASA LP</h4>
+            <ol class="exp-list">
+              <li>Executed 12 lines of geoelectric surveys and geospatial mapping covering 200+ hectares.</li>
+              <li>Conducted 6 lines of geoelectric surveys and topographic mapping across 50+ hectares.</li>
+              <li>Performed 18 systematic exploratory drilling operations to validate models.</li>
+              <li>Processed and interpreted 15+ geoelectric datasets using Res2DInv.</li>
+            </ol>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-icon"><img src="logo-bahasa.jpg" alt="Language" class="bahasa-logo"></div>
-          <div class="timeline-content">
-            <h3>Languages</h3>
-            <ul>
-              <li>Bahasa Indonesia (Fluent)</li>
-              <li>Javanese (Fluent)</li>
-              <li>English (Conversational Proficiency)</li>
-            </ul>
+
+        <!-- Experience 3 -->
+        <div class="exp-card">
+          <div class="exp-img"><img src="foto-kerja-3.jpg" alt="Fieldwork Teaching Assistant"></div>
+          <div class="exp-content">
+            <span class="exp-date">May–June 2023 & May–June 2024</span>
+            <span class="exp-location">Pontianak, Indonesia</span>
+            <h3>Undergraduate Fieldwork Teaching Assistant</h3>
+            <h4>TANJUNGPURA UNIVERSITY</h4>
+            <ol class="exp-list">
+              <li>Coordinated equipment deployment and facilitated field data acquisition.</li>
+              <li>Guided 20+ students through data inversion, processing using Res2DInv, and QC.</li>
+              <li>Instructed students on water resource measurement techniques.</li>
+            </ol>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: SKILLS -->
+<!------------------------------------------------------------------------ Project Section --------------------------------------------------------->
+<section class="section" id="project">
+  <div class="section-title">
+    <h2>My <span>Projects</span></h2>
+    <p>
+      Geoscience and geospatial projects showcasing field experience,
+      data processing, mapping, and subsurface interpretation.
+    </p>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <i class="fa-solid fa-magnet"></i>
+      <h3>Geophysical Survey</h3>
+      <p>
+        Geoelectrical survey projects covering field data acquisition,
+        data processing, visualization, and subsurface interpretation.
+      </p>
+    </article>
+
+    <article class="card">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <h3>GIS & Mapping</h3>
+      <p>
+        Geospatial mapping projects involving spatial data processing,
+        topographic mapping, and map visualization using QGIS and
+        Global Mapper.
+      </p>
+    </article>
+
+    <article class="card">
+      <i class="fa-solid fa-mountain"></i>
+      <h3>Mineral Exploration</h3>
+      <p>
+        Geological exploration projects involving field observations,
+        drilling validation, and geological data integration.
+      </p>
+    </article>
+
+    <article class="card">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Geospatial Data Analysis</h3>
+      <p>
+        Data analysis projects focused on organizing, processing,
+        and interpreting geophysical and geospatial datasets
+        to support technical decision-making.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!------------------------------------------------------------- SECTION: SKILLS ------------------------------------------------------------------------------------------->
     <section class="section" id="skills">
       <div class="section-title">
         <h2>My <span>Skills</span></h2>
@@ -191,125 +304,119 @@
       </div>
     </section>
 
-    <!-- SECTION: EXPERIENCE -->
-    <section class="section" id="experience">
+<!------------------------------------------------------------- SECTION: EDUCATION --------------------------------------------------->
+    <section class="section" id="education">
       <div class="section-title">
-        <h2>My <span>Experience</span></h2>
-        <p>Field and technical experience in geophysics, surveying, GIS, and exploration.</p>
+        <h2>My <span>Education</span></h2>
+        <p>Academic background supporting my work in geophysics, surveying, and geospatial analysis.</p>
       </div>
-      <div class="experience-grid">
-        <!-- Experience 1 -->
-        <div class="exp-card">
-          <div class="exp-img"><img src="foto-kerja-1.jpeg" alt="Junior GIS Surveyor"></div>
-          <div class="exp-content">
-            <span class="exp-date">Jan 2026 – Jul 2026</span>
-            <span class="exp-location">Ketapang, Indonesia</span>
-            <h3>Junior GIS Surveyor </h3>
-            <h4>LBH KALBAR</h4>
-            <ol class="exp-list">
-              <li>Conducted topographic surveys and geospatial mapping across 3 active mining blocks and 2 bauxite processing facilities covering 500+ hectares.</li>
-              <li>Monitored surface water quality across 8 major rivers to evaluate environmental impact.</li>
-              <li>Executed soil quality surveys by participating in 4 shallow drilling operations.</li>
-              <li>Managed and documented 100+ geospatial and field datasets.</li>
-            </ol>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"><img src="logo-untan.png" alt="Untan Logo" class="school-logo"></div>
+          <div class="timeline-content">
+            <h3>Geophysics</h3>
+            <h4>Tanjungpura University</h4>
+            <p>• Cumulative GPA: 3.28/4.0<br>• Indonesian Geophysics Student Association<br>• Thesis: Comparative Analysis of Weibull and Rayleigh Distributions for Identifying Dominant Wind Speeds in Ketapang Regency.</p>
           </div>
         </div>
-
-        <!-- Experience 2 -->
-        <div class="exp-card">
-          <div class="exp-img"><img src="foto-kerja-2.png" alt="Field Survey"></div>
-          <div class="exp-content">
-            <span class="exp-date">Jul 2025 – Dec 2025</span>
-            <span class="exp-location">Bengkayang and Sambas, Indonesia</span>
-            <h3>Junior Geophysicist</h3>
-            <h4>AMERTA BUMI PRAKASA LP</h4>
-            <ol class="exp-list">
-              <li>Executed 12 lines of geoelectric surveys and geospatial mapping covering 200+ hectares.</li>
-              <li>Conducted 6 lines of geoelectric surveys and topographic mapping across 50+ hectares.</li>
-              <li>Performed 18 systematic exploratory drilling operations to validate models.</li>
-              <li>Processed and interpreted 15+ geoelectric datasets using Res2DInv.</li>
-            </ol>
+        <div class="timeline-item">
+          <div class="timeline-icon"><img src="logo-smk4.png" alt="SMK 4 Logo" class="school-logo"></div>
+          <div class="timeline-content">
+            <h3>Geomatics Engineering</h3>
+            <h4>SMK Negeri 4 Pontianak</h4>
+            <p>• Vocational Competency Certification (UKK): Competent in Land Surveying<br>• Proficient in operating surveying instruments such as Total Station and Auto Level<br>• Focused on topographic surveying, spatial mapping, contouring, GIS data entry, and coordinate calculations</p>
           </div>
         </div>
-
-        <!-- Experience 3 -->
-        <div class="exp-card">
-          <div class="exp-img"><img src="foto-kerja-3.jpg" alt="Fieldwork Teaching Assistant"></div>
-          <div class="exp-content">
-            <span class="exp-date">May–June 2023 & May–June 2024</span>
-            <span class="exp-location">Pontianak, Indonesia</span>
-            <h3>Undergraduate Fieldwork Teaching Assistant</h3>
-            <h4>TANJUNGPURA UNIVERSITY</h4>
-            <ol class="exp-list">
-              <li>Coordinated equipment deployment and facilitated field data acquisition.</li>
-              <li>Guided 20+ students through data inversion, processing using Res2DInv, and QC.</li>
-              <li>Instructed students on water resource measurement techniques.</li>
-            </ol>
+        <div class="timeline-item">
+          <div class="timeline-icon"><img src="logo-bahasa.jpg" alt="Language" class="bahasa-logo"></div>
+          <div class="timeline-content">
+            <h3>Languages</h3>
+            <ul>
+              <li>Bahasa Indonesia (Fluent)</li>
+              <li>Javanese (Fluent)</li>
+              <li>English (Conversational Proficiency)</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: SERVICES -->
-    <section class="section" id="services">
-      <div class="section-title">
-        <h2>My <span>Services</span></h2>
-        <p>Geoscience and geospatial services based on field and data-processing experience.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <i class="fa-solid fa-magnet"></i>
-          <h3>Geophysical Survey</h3>
-          <p>Support for geoelectrical field surveys, data preparation, processing, visualization, and basic subsurface interpretation.</p>
-        </article>
-        <article class="card">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <h3>GIS & Mapping</h3>
-          <p>GIS data processing, spatial visualization, topographic mapping, and map preparation using QGIS and Global Mapper.</p>
-        </article>
-        <article class="card">
-          <i class="fa-solid fa-mountain"></i>
-          <h3>Mineral Exploration</h3>
-          <p>Field support for mineral exploration activities, geological observations, drilling validation, and integration of field data.</p>
-        </article>
-        <article class="card">
-          <i class="fa-solid fa-chart-line"></i>
-          <h3>Data Interpretation</h3>
-          <p>Organizing and interpreting geophysical and geospatial datasets into clear information that supports technical decisions.</p>
-        </article>
-      </div>
-    </section>
+<!------------------------------------------------------------SECTION: COURSES / CERTIFICATIONS--------------------------------------------------------->
+<section class="section" id="courses-certifications">
 
-    <!-- SECTION: FAQ -->
-    <section class="section faq-section" id="FAQ">
-      <div class="section-title">
-        <h2><span>FAQ</span></h2>
-        <p>Frequently asked questions about my background, skills, experience, and professional services.</p>
-      </div>
-      <div class="faq-wrapper">
-        <div class="faq-item">
-          <button class="faq-question"><span>What is your educational background?</span><i class="fa-solid fa-chevron-down"></i></button>
-          <div class="faq-answer"><p>I have a background in Geophysics from Tanjungpura University and previously studied Geomatics Engineering at SMK Negeri 4 Pontianak.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>What are your main areas of expertise?</span><i class="fa-solid fa-chevron-down"></i></button>
-          <div class="faq-answer"><p>My main areas include geophysical surveying, GIS and mapping, topographic surveying, mineral exploration support, geoelectrical data processing, and geospatial data interpretation.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>What software do you use?</span><i class="fa-solid fa-chevron-down"></i></button>
-          <div class="faq-answer"><p>I have experience using QGIS, Global Mapper, and Res2DInv for GIS processing, mapping, geospatial visualization, and geoelectrical data processing.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>Do you have field survey experience?</span><i class="fa-solid fa-chevron-down"></i></button>
-          <div class="faq-answer"><p>Yes. My experience includes field surveying, geoelectrical surveys, topographic mapping, field data collection, drilling validation, measurement, and technical field support.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question"><span>Are you available for professional opportunities?</span><i class="fa-solid fa-chevron-down"></i></button>
-          <div class="faq-answer"><p>Yes. I am open to professional opportunities, field survey work, GIS-related projects, geoscience roles, exploration projects, and other opportunities related to my skills and experience.</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <div class="section-title">
+    <h2>Courses <span>& Certifications</span></h2>
+    <p>
+      Professional training, courses, and certifications that
+      support my skills in geophysics, GIS, surveying, and
+      geological exploration.
+    </p>
+  </div>
+
+  <div class="cards">
+
+    <!-- Course 1 -->
+    <article class="card">
+      <i class="fa-solid fa-certificate"></i>
+      <h3>Geophysical Survey</h3>
+      <p>
+        Training in geophysical survey methods, geoelectrical
+        measurements, field data acquisition, and subsurface
+        interpretation.
+      </p>
+      <p><strong>Organizer:</strong> [Training Provider]</p>
+      <a href="#" class="btn" target="_blank" rel="noopener noreferrer">
+        View Certificate
+      </a>
+    </article>
+
+    <!-- Course 2 -->
+    <article class="card">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <h3>GIS & Geospatial Mapping</h3>
+      <p>
+        Training in GIS data processing, spatial analysis,
+        digital mapping, and geospatial visualization using
+        QGIS and Global Mapper.
+      </p>
+      <p><strong>Organizer:</strong> [Training Provider]</p>
+      <a href="#" class="btn" target="_blank" rel="noopener noreferrer">
+        View Certificate
+      </a>
+    </article>
+
+    <!-- Course 3 -->
+    <article class="card">
+      <i class="fa-solid fa-mountain"></i>
+      <h3>Mineral Exploration</h3>
+      <p>
+        Training related to geological field observations,
+        mineral exploration activities, and exploration
+        data collection.
+      </p>
+      <p><strong>Organizer:</strong> [Training Provider]</p>
+      <a href="#" class="btn" target="_blank" rel="noopener noreferrer">
+        View Certificate
+      </a>
+    </article>
+
+    <!-- Course 4 -->
+    <article class="card">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Geoelectrical Data Processing</h3>
+      <p>
+        Practical learning in resistivity data processing,
+        geoelectrical analysis, and subsurface visualization
+        using Res2DInv.
+      </p>
+      <p><strong>Organizer:</strong> [Training Provider]</p>
+      <a href="#" class="btn" target="_blank" rel="noopener noreferrer">
+        View Certificate
+      </a>
+    </article>
+
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer>
