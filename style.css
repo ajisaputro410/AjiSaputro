@@ -7,7 +7,7 @@
    SISTEM VARIABEL WARNA (TEMA GELAP & TERANG)
 =========================================================== */
 :root {
-    --accent: #b74b4b;
+    --accent: #ff5555;
     
     /* 🌙 Tema Gelap: Warna transparan (0.4) agar tembus pandang */
     --bg: #000000;
@@ -26,7 +26,7 @@ body.light-theme {
     /* ☀️ Tema Terang: Warna transparan (0.5) agar tembus pandang */
     --bg: #ffffff;
     --text-color: #000000; 
-    --header-bg: rgba(255, 255, 255, 0.5); 
+    --header-bg: rgba(246, 246, 246, 0.926); 
     --muted: #222222; 
     --border-color: #cccccc;
     
@@ -34,6 +34,7 @@ body.light-theme {
     --card-bg: #f4f4f4; 
     --hover-bg: #e8e8e8;
     --bar-bg: #d1d1d1;
+    
 }
 
 /* ========================================================
@@ -1085,4 +1086,12 @@ span {
     .timeline::before{left:20px}
     .timeline-icon{width:42px;height:42px;min-width:42px;font-size:1.5rem}
     .timeline-content{padding:2rem}
+}
+
+/* Perbaikan Global: Menghilangkan kotak putih ikon bulan di layar laptop & HP */
+body:not(.light-theme) .theme-toggle img,
+body:not(.light-theme) .theme-toggle {
+    mix-blend-mode: screen !important;
+    background: transparent !important;
+    background-color: transparent !important;
 }
