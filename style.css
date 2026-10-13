@@ -1,48 +1,42 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 /* =====================================================
-   1. VARIABEL TEMA GELAP DAN TERANG
+   1. TEMA DAN RESET
 ===================================================== */
-
 :root {
     --accent: #ff5555;
-    --bg: #000000;
-    --text-color: #ffffff;
-    --header-bg: rgba(0, 0, 0, 0.4);
+    --bg: #000;
+    --text-color: #fff;
+    --header-bg: rgba(0, 0, 0, .4);
     --muted: #bdbdbd;
     --border-color: #272727;
-    --card-bg: #111111;
+    --card-bg: #111;
     --hover-bg: #1a1a1a;
     --bar-bg: #292929;
 }
 
 body.light-theme {
-    --bg: #ffffff;
-    --text-color: #000000;
-    --header-bg: rgba(246, 246, 246, 0.93);
-    --muted: #444444;
-    --border-color: #cccccc;
+    --bg: #fff;
+    --text-color: #000;
+    --header-bg: rgba(246, 246, 246, .93);
+    --muted: #444;
+    --border-color: #ccc;
     --card-bg: #f4f4f4;
     --hover-bg: #e8e8e8;
     --bar-bg: #d1d1d1;
 }
 
-/* =====================================================
-   2. RESET DAN DASAR
-===================================================== */
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 2px;
 }
 
 body {
@@ -51,7 +45,7 @@ body {
     overflow-x: hidden;
     background: var(--bg);
     color: var(--text-color);
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background .3s ease, color .3s ease;
 }
 
 a {
@@ -75,120 +69,109 @@ img {
 }
 
 /* =====================================================
-   3. HEADER DAN NAVIGASI
+   2. HEADER DAN NAVIGASI
 ===================================================== */
 header {
     position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
     width: 100%;
     min-height: 8rem;
     padding: 1.8rem 5%;
-    box-sizing: border-box;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2.5rem;
-
-    z-index: 1000;
     background: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--border-color);
-
-    transition: background 0.3s ease,
-                border-color 0.3s ease;
+    transition: background .3s ease, border-color .3s ease;
 }
 
 .logo {
     flex-shrink: 0;
+    color: var(--accent);
     font-size: 3rem;
     font-weight: 800;
-    color: var(--accent);
-    cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
-.logo:hover {
-    transform: scale(1.05);
-}
-
-nav {
+header nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: clamp(1.6rem, 2vw, 3rem);
-    flex-wrap: nowrap;
+    gap: clamp(4rem, 4vw, 4rem);
     min-width: 0;
+    flex-wrap: nowrap;
 }
 
-nav a {
+header nav a {
     display: inline-block;
-    white-space: nowrap;
     flex-shrink: 0;
-    font-size: 1.5rem;
-    color: var(--text-color);
-    font-weight: 500;
+    padding-bottom: .5rem;
     border-bottom: 3px solid transparent;
-    padding-bottom: 0.5rem;
-    transition: color 0.3s ease, border-color 0.3s ease;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color .3s ease, border-color .3s ease;
 }
 
-nav a:hover,
-nav a.active {
+header nav a:hover,
+header nav a.active {
     color: var(--accent);
     border-bottom-color: var(--accent);
 }
 
+/* Tombol tema sengaja tanpa animasi/efek transform agar tidak meloncat */
 .theme-toggle {
     display: inline-flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 40px;
+    height: 44px;
     margin-left: 1rem;
     padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--accent);
     font-size: 1.8rem;
     line-height: 1;
-    color: var(--accent);
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.theme-toggle:hover {
-    transform: scale(1.08);
+    transition: none;
 }
 
 .menu-btn {
     display: none;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 44px;
+    height: 44px;
     padding: 0;
+    border: 0;
     background: transparent;
     color: var(--accent);
     font-size: 2.8rem;
     line-height: 1;
-    border: none;
+    touch-action: manipulation;
+}
+
+.menu-btn i {
+    pointer-events: none;
 }
 
 /* =====================================================
-   4. PENGATURAN UMUM SECTION
+   3. SECTION DAN JUDUL
 ===================================================== */
-
 section {
     min-height: 100vh;
     padding: 10rem 9% 7rem;
     background: var(--bg);
-    scroll-margin-top: 8rem;
-    transition: background 0.3s ease;
+    scroll-margin-top: 0rem;
+    transition: background .3s ease;
 }
 
 .section {
@@ -211,12 +194,11 @@ section {
 }
 
 .section-title p {
+    color: var(--muted);
     font-size: 1.6rem;
     line-height: 1.7;
-    color: var(--muted);
 }
 
-/* Hindari semua span berubah warna secara global */
 .section-title h2 span,
 .home-content h1 span,
 .home-content h3 span {
@@ -224,42 +206,41 @@ section {
 }
 
 /* =====================================================
-   5. HOME SECTION
+   4. ABOUT / HOME
 ===================================================== */
-
 .home {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 8rem;
     background: var(--bg);
 }
 
-.home .home-content {
+.home-content {
     width: 100%;
     max-width: 720px;
     min-width: 0;
 }
 
-.home .home-content h1 {
+.home-content h1 {
+    color: var(--text-color);
     font-size: 6rem;
     font-weight: 700;
     line-height: 1.3;
-    color: var(--text-color);
     overflow-wrap: anywhere;
 }
 
 .home-content h3 {
     margin-bottom: 1rem;
+    color: var(--text-color);
     font-size: 4rem;
     font-weight: 700;
-    color: var(--text-color);
 }
 
 .home-content p {
+    color: var(--muted);
     font-size: 1.6rem;
     line-height: 1.8;
-    color: var(--muted);
 }
 
 .home-img {
@@ -269,17 +250,17 @@ section {
 
 .home-img img {
     width: 32vw;
-    max-width: 470px;
     min-width: 280px;
+    max-width: 470px;
     border-radius: 50%;
-    box-shadow: 0 0 35px rgba(183, 75, 75, 0.45);
+    box-shadow: 0 0 35px rgba(183, 75, 75, .45);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .home-img img:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 50px rgba(183, 75, 75, 0.65);
+    box-shadow: 0 0 50px rgba(183, 75, 75, .65);
 }
 
 .social-icons {
@@ -290,24 +271,32 @@ section {
 
 .social-icons a {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 4rem;
     height: 4rem;
     margin: 3rem 1.5rem 3rem 0;
-    border: 0.2rem solid var(--accent);
+    border: .2rem solid var(--accent);
     border-radius: 50%;
     background: transparent;
     color: var(--accent);
     font-size: 2rem;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
 
 .social-icons a:hover {
-    color: var(--bg);
-    background: var(--accent);
-    box-shadow: 0 0 25px var(--accent);
     transform: scale(1.1) translateY(-4px);
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 25px var(--accent);
+}
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .btn {
@@ -319,31 +308,23 @@ section {
     color: var(--accent);
     font-size: 1.6rem;
     font-weight: 600;
-    letter-spacing: 0.2rem;
+    letter-spacing: .2rem;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
 
 .btn:hover {
+    transform: scale(1.03);
     background: var(--accent);
     color: var(--bg);
     box-shadow: 0 0 25px var(--accent);
-    transform: scale(1.03);
-}
-
-.home-buttons {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 1rem;
 }
 
 .cv-btn {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    gap: 0.8rem;
+    justify-content: center;
+    gap: .8rem;
 }
 
 .cv-btn i {
@@ -351,86 +332,8 @@ section {
 }
 
 /* =====================================================
-   6. ANIMASI TYPING
+   5. PROJECT DAN SERTIFIKASI
 ===================================================== */
-
-.typing-text {
-    font-size: 3.4rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.typing-text span {
-    position: relative;
-    display: inline-block;
-    color: var(--accent);
-    white-space: nowrap;
-}
-
-.typing-text span::before {
-    content: "Junior Geophysicist";
-    animation: words 20s infinite;
-}
-
-.typing-text span::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -8px;
-    width: calc(100% + 8px);
-    height: 100%;
-    background: var(--bg);
-    border-left: 3px solid var(--accent);
-    animation: cursor 0.8s infinite, typing 4s steps(20) infinite;
-    pointer-events: none;
-}
-
-@keyframes cursor {
-    0%, 100% {
-        border-left-color: var(--accent);
-    }
-
-    50% {
-        border-left-color: transparent;
-    }
-}
-
-@keyframes words {
-    0%, 20% {
-        content: "Junior Geophysicist";
-    }
-
-    21%, 40% {
-        content: "Land Surveyor";
-    }
-
-    41%, 60% {
-        content: "Geospatial Analyst";
-    }
-
-    61%, 80% {
-        content: "Topographic Mapper";
-    }
-
-    81%, 100% {
-        content: "Geophysicist";
-    }
-}
-
-@keyframes typing {
-    0%, 10%, 100% {
-        width: calc(100% + 8px);
-    }
-
-    40%, 60% {
-        width: 0;
-    }
-}
-
-/* =====================================================
-   7. CARDS / SERVICES / COURSES
-===================================================== */
-
 .cards {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -447,16 +350,16 @@ section {
     border-radius: 2rem;
     background: var(--card-bg);
     text-align: center;
-    transition: all 0.3s ease;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 
 .card:hover {
     transform: translateY(-6px);
     border-color: var(--accent);
-    box-shadow: 0 0 25px rgba(183, 75, 75, 0.2);
+    box-shadow: 0 0 25px rgba(183, 75, 75, .2);
 }
 
-.card i {
+.card > i {
     margin-bottom: 2rem;
     color: var(--accent);
     font-size: 4rem;
@@ -475,9 +378,8 @@ section {
 }
 
 /* =====================================================
-   8. SKILLS
+   6. SKILLS
 ===================================================== */
-
 .skills-wrapper {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -493,7 +395,7 @@ section {
     border: 1px solid var(--border-color);
     border-radius: 1.6rem;
     background: var(--card-bg);
-    transition: background 0.3s ease, border-color 0.3s ease;
+    transition: background .3s ease, border-color .3s ease;
 }
 
 .skill-group h3 {
@@ -503,40 +405,38 @@ section {
 }
 
 .skill-group h3 i {
-    margin-right: 0.8rem;
+    margin-right: .8rem;
     color: var(--accent);
 }
 
 .skill-item {
-    margin-bottom: 0.8rem;
-    padding: 0.8rem;
+    margin-bottom: .8rem;
+    padding: .8rem;
     border: 1px solid transparent;
     border-radius: 1rem;
-    background: transparent;
-    transition: all 0.3s ease;
+    transition: background .3s ease, border-color .3s ease, transform .3s ease;
 }
 
 .skill-item:hover {
+    transform: translateY(-2px);
     border-color: var(--accent);
     background: var(--hover-bg);
-    transform: translateY(-2px);
 }
 
-.skill-item > div:first-child {
+.skill-info {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: .4rem;
     color: var(--text-color);
     font-size: 1.4rem;
 }
 
-.skill-item > div:first-child span:last-child {
+.skill-info span:last-child {
     flex-shrink: 0;
     color: var(--accent);
 }
-
 .skill-bar {
     width: 100%;
     height: 7px;
@@ -544,206 +444,66 @@ section {
     border-radius: 20px;
     background: var(--bar-bg);
 }
-
 .skill-bar span {
     display: block;
     width: 0;
     height: 100%;
     border-radius: 20px;
     background: var(--accent);
-    transition: width 0.5s ease;
+    transition: width .5s ease;
 }
-
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: .8rem;
 }
 
 .skill-tags span {
     display: inline-flex;
     align-items: center;
-    padding: 0.75rem 1.2rem;
+    padding: .75rem 1.2rem;
     border: 1px solid var(--border-color);
     border-radius: 3rem;
     background: var(--card-bg);
     color: var(--text-color);
     font-size: 1.2rem;
-    transition: all 0.3s ease;
+    transition: background .3s ease, border-color .3s ease, color .3s ease;
 }
 
 .skill-tags span:hover {
     border-color: var(--accent);
     background: var(--accent);
-    color: #ffffff;
+    color: #fff;
 }
 
 .skill-tags span i {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    margin-right: 0.6rem;
+    margin-right: .6rem;
     font-size: 2rem;
 }
 
 .app-icon {
     width: 2.5rem;
     height: 2.5rem;
-    margin-right: 0.6rem;
+    margin-right: .6rem;
     object-fit: contain;
     vertical-align: middle;
 }
 
 /* =====================================================
-   9. TIMELINE DASAR
+   7. EDUCATION
 ===================================================== */
-
 .timeline {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.timeline::before {
-    display: none;
-    content: none;
-}
-
-.timeline-item {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.timeline-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    background: #ffffff;
-}
-
-.timeline-icon img {
-    width: 100%;
-    height: 100%;
-    padding: 8px;
-    margin: 0 auto;
-    object-fit: contain;
-}
-
-.timeline-content {
-    flex: 1;
-    min-width: 0;
-    padding: 2.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 1.5rem;
-    background: var(--card-bg);
-    transition: border-color 0.3s ease, background 0.3s ease;
-}
-
-.timeline-content:hover {
-    border-color: var(--accent);
-}
-
-.timeline-date {
-    display: inline-block;
-    margin-bottom: 0.8rem;
-    color: var(--accent);
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.timeline-content h3 {
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-    font-size: 2.2rem;
-}
-
-.timeline-content h4 {
-    margin-bottom: 1.5rem;
-    color: var(--muted);
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.timeline-content p,
-.timeline-content li {
-    color: var(--muted);
-    font-size: 1.45rem;
-    line-height: 1.8;
-}
-
-.timeline-content ul {
-    padding-left: 2rem;
-}
-
-/* =====================================================
-   10. EDUCATION - KARTU GAYA LINKEDIN
-===================================================== */
-
-#education-development > .education-subsection {
-    display: flow-root;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0;
-    padding: 4rem 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-}
-
-#education-development > .education-subsection
-+ .education-subsection {
-    padding-top: 5rem;
-    border-top: 1px solid var(--border-color);
-}
-
-#education-development .subsection-title {
-    width: 100%;
-    margin: 0 0 2.8rem;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    text-align: left;
-}
-
-#education-development .subsection-title h3 {
-    color: var(--text-color);
-    font-size: 2.8rem;
-    line-height: 1.3;
-}
-
-#education-development .subsection-title p {
-    margin-top: 0.8rem;
-    color: var(--muted);
-    font-size: 1.4rem;
-    line-height: 1.7;
-}
-
-#education-development .timeline {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0;
 }
 
 .linkedin-style-card {
@@ -753,13 +513,12 @@ section {
     border: 1px solid var(--border-color);
     border-radius: 1rem;
     background: var(--card-bg);
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    transition: border-color .3s ease, transform .3s ease;
 }
 
 .linkedin-style-card:hover {
-    border-color: var(--accent);
     transform: translateY(-2px);
+    border-color: var(--accent);
 }
 
 .linkedin-style-card .timeline-content {
@@ -768,27 +527,19 @@ section {
     gap: 1.6rem;
     width: 100%;
     min-width: 0;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-}
-
-.linkedin-style-card .timeline-content:hover {
-    border-color: transparent;
 }
 
 .timeline-icon-inside {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex: 0 0 64px;
+    align-items: center;
+    justify-content: center;
     width: 64px;
     height: 64px;
     padding: 6px;
     overflow: hidden;
     border-radius: 6px;
-    background: #ffffff;
+    background: #fff;
 }
 
 .school-logo-inside {
@@ -801,7 +552,7 @@ section {
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: .5rem;
     min-width: 0;
     text-align: left;
 }
@@ -822,398 +573,229 @@ section {
     line-height: 1.5;
 }
 
-.timeline-text-inside p {
-    margin-top: 0.3rem;
+.timeline-text-inside p,
+.timeline-text-inside li {
     color: var(--muted);
     font-size: 1.3rem;
     line-height: 1.7;
 }
 
-.linkedin-language-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin: 0.5rem 0 0;
-    padding: 0;
-    list-style: none;
-}
-
-.linkedin-language-list li {
-    position: relative;
-    color: var(--muted);
-    font-size: 1.3rem;
-    line-height: 1.7;
-}
-
-.linkedin-language-list li strong {
-    color: var(--text-color);
-    font-weight: 600;
-}
-
-#education-development .skills-wrapper,
-#education-development #courses-certifications .cards {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-#education-development .skills-wrapper {
-    gap: 2.8rem;
-}
-
-#education-development #courses-certifications .cards {
-    gap: 2rem;
-}
-
-#education-development > .education-subsection:last-child {
-    padding-bottom: 0;
-}
-
 /* =====================================================
-   11. LANGUAGE SECTION
+   EXPERIENCE — LINKEDIN STYLE
 ===================================================== */
 
-.language-section {
+#experience .experience-timeline {
+    gap: 1.4rem;
+}
+
+#experience .experience-linkedin-card .timeline-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
+    align-items: flex-start;
+    gap: 1.6rem;
     width: 100%;
-    max-width: 850px;
-    margin: 0 auto 3rem;
-}
-
-.language-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    background: #ffffff;
-    color: var(--accent);
-    font-size: 3.5rem;
-}
-
-.language-box {
-    flex: 1;
     min-width: 0;
-    padding: 2.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 1.5rem;
-    background: var(--card-bg);
-    transition: all 0.3s ease;
-}
-
-.language-box:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(183, 75, 75, 0.2);
-    transform: translateY(-3px);
-}
-
-.language-content strong {
-    display: inline-block;
-    margin-bottom: 0.8rem;
-    color: var(--accent);
-    font-size: 1.6rem;
-}
-
-.language-content ul {
-    margin: 0;
     padding: 0;
-    list-style: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
 }
 
-.language-content li {
-    position: relative;
-    padding-left: 1.5rem;
-    color: var(--muted);
-    font-size: 1.45rem;
-    line-height: 1.8;
+#experience .experience-linkedin-card .timeline-content:hover {
+    border-color: transparent;
 }
-
-.language-content li::before {
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    content: "•";
-}
-
 /* =====================================================
-   12. EXPERIENCE SECTION
+   EXPERIENCE — FOTO DENGAN KOTAK PUTIH
 ===================================================== */
 
-.experience-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.exp-card {
+#experience .experience-image-inside {
     display: flex;
-    flex-direction: column;
-    min-width: 0;
-    min-height: 560px;
+    flex: 0 0 76px;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    padding: 5px;
     overflow: hidden;
-    margin: 0;
-    border: 1px solid var(--border-color);
-    border-radius: 1.5rem;
-    background: var(--card-bg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    background: #fff;
 }
 
-.exp-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-}
-
-.exp-img {
+#experience .experience-image-inside img {
     display: block;
-    flex-shrink: 0;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    background: var(--bg);
-}
-
-.exp-img img {
     width: 100%;
     height: 100%;
+    border-radius: 4px;
     object-fit: cover;
-    object-position: center;
-    transition: transform 0.4s ease;
 }
 
-.exp-card:hover .exp-img img {
-    transform: scale(1.03);
-}
-
-.exp-content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 1.8rem;
-}
-
-.exp-date,
-.exp-location {
-    display: block;
-    color: var(--accent);
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.exp-date {
-    margin-bottom: 0.3rem;
-}
-
-.exp-location {
-    margin-bottom: 0.8rem;
-    font-weight: 500;
-}
-
-.exp-content h3 {
-    margin: 0 0 0.5rem;
-    color: var(--text-color);
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-.exp-content h4 {
-    margin: 0 0 1.2rem;
+/* Informasi tanggal dan lokasi */
+#experience .experience-meta {
+    margin: 0.2rem 0 0.8rem;
     color: var(--muted);
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    line-height: 1.7;
 }
 
-.exp-list {
-    margin: 0;
+#experience .experience-meta span {
+    margin: 0 0.3rem;
+}
+
+/* Daftar tanggung jawab pekerjaan */
+#experience .experience-list {
+    margin: 0.4rem 0 0;
     padding-left: 2rem;
-    box-sizing: border-box;
 }
 
-.exp-list li {
-    margin-bottom: 0.8rem;
+#experience .experience-list li {
+    margin-bottom: 0.6rem;
     color: var(--muted);
     font-size: 1.3rem;
-    line-height: 1.6;
-    overflow-wrap: anywhere;
+    line-height: 1.7;
 }
 
-.exp-list li:last-child {
+#experience .experience-list li:last-child {
     margin-bottom: 0;
 }
 
 /* =====================================================
-   13. FAQ SECTION
+   EXPERIENCE — PENYESUAIAN HP
 ===================================================== */
 
-.faq-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 900px;
-    margin: 4rem auto 0;
+@media (max-width: 550px) {
+    #experience .experience-linkedin-card {
+        padding: 1.3rem;
+    }
+
+    #experience .experience-linkedin-card .timeline-content {
+        gap: 1.2rem;
+    }
+
+    #experience .experience-image-inside {
+        flex-basis: 56px;
+        width: 56px;
+        height: 56px;
+        padding: 4px;
+    }
+
+    #experience .experience-list {
+        padding-left: 1.7rem;
+    }
+
+    #experience .experience-list li {
+        font-size: 1.2rem;
+        line-height: 1.65;
+    }
+
+    #experience .experience-meta {
+        font-size: 1.15rem;
+    }
 }
 
-.faq-item {
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    border-radius: 1.5rem;
-    background: var(--card-bg);
-    transition: border-color 0.3s ease, transform 0.3s ease;
+/* =====================================================
+   9. DETAIL KONTEN TAMBAHAN
+===================================================== */
+.skills-extra {
+    margin-top: 3rem;
 }
 
-.faq-item:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
+.skills-extra h3 {
+    margin-bottom: 1.5rem;
 }
 
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
-    padding: 2.2rem 2.5rem;
-    border: none;
-    background: transparent;
-    color: var(--text-color);
-    text-align: left;
-    font-size: 1.6rem;
-    font-weight: 600;
-    cursor: pointer;
+.skills-note {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    opacity: .8;
 }
 
-.faq-question i {
-    flex-shrink: 0;
-    color: var(--accent);
-    font-size: 1.4rem;
-    transition: transform 0.3s ease;
+.education-list {
+    margin-top: 1.2rem;
+    padding-left: 2rem;
 }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 2.5rem;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
-}
-
-.faq-answer p {
-    margin: 0;
+.education-list li {
+    margin-bottom: 1rem;
     color: var(--muted);
-    font-size: 1.4rem;
-    line-height: 1.8;
+    font-size: 1.3rem;
+    line-height: 1.7;
 }
 
-.faq-answer a {
-    color: var(--accent);
-    text-decoration: none;
+.project-details,
+.credential-details {
+    margin-top: 1.6rem;
 }
 
-.faq-answer a:hover {
-    text-decoration: underline;
+.project-details p,
+.credential-details p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
 }
 
-.faq-item.active .faq-answer {
-    max-height: 300px;
-    padding: 0 2.5rem 2.2rem;
-    opacity: 1;
+.credential-status {
+    display: inline-block;
+    margin-top: 1.4rem;
+    padding: .7rem 1.2rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
 
-.faq-item.active .faq-question i {
-    transform: rotate(180deg);
-}
 
 /* =====================================================
-   14. TOMBOL TEMA
+   9. FOOTER
 ===================================================== */
-
-body:not(.light-theme) img[src*="moon"],
-body:not(.light-theme) .theme-toggle img {
-    background: transparent;
-    mix-blend-mode: screen;
-}
-
-body:not(.light-theme) .theme-toggle,
-body:not(.light-theme) nav .theme-toggle,
-body:not(.light-theme) header .theme-toggle,
-body:not(.light-theme) .theme-toggle button {
-    background: transparent;
-    border: none;
-    box-shadow: none;
+footer {
+    padding: 2rem 5%;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 /* =====================================================
-   15. LAPTOP DAN TABLET BESAR
+   10. LAPTOP DAN TABLET BESAR
 ===================================================== */
 @media (max-width: 1100px) {
-    .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    header nav {
-        gap: 1.5rem;
-    }
-
-    header nav a {
-        font-size: 1.3rem;
-    }
-
-    .home {
-        gap: 4rem;
-    }
-
-    .home .home-content h1 {
-        font-size: 5rem;
-    }
-
-    .home-content h3 {
-        font-size: 3rem;
-    }
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    header nav { gap: 1.5rem; }
+    header nav a { font-size: 1.3rem; }
+    .home { gap: 4rem; }
+    .home-content h1 { font-size: 5rem; }
+    .home-content h3 { font-size: 3rem; }
 }
 
-
-/* =====================================================
-   16. NAVIGASI RESPONSIF
-===================================================== */
-
+/* Menu dropdown mulai tablet */
 @media (max-width: 995px) {
-    header {
-        position: fixed;
-        padding: 1.2rem 3rem;
-    }
+    header { padding: 1.2rem 3rem; }
 
     header .menu-btn {
-        display: inline-flex;
         position: absolute;
         top: 50%;
-        right: 3rem;
+        right: 12px;
+        z-index: 1100;
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
         transform: translateY(-50%);
-        z-index: 103;
+        pointer-events: auto;
     }
 
     header .theme-toggle {
         position: absolute;
         top: 50%;
-        right: 9rem;
+        right: 62px;
+        z-index: 1099;
+        width: 40px;
+        height: 44px;
         margin: 0;
         transform: translateY(-50%);
-        z-index: 102;
     }
 
-    nav {
+    header nav {
         position: absolute;
         top: 100%;
         right: 0;
@@ -1231,20 +813,23 @@ body:not(.light-theme) .theme-toggle button {
         border-bottom: 3px solid var(--accent);
         border-radius: 0 0 0 1.5rem;
         background: var(--card-bg);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
     }
 
-    nav.active {
+    header nav.active {
         display: flex;
+        visibility: visible;
+        opacity: 1;
     }
 
-    nav a {
+    header nav a {
         display: block;
         width: 100%;
         margin: 1rem 0;
         font-size: 1.8rem;
+        white-space: normal;
     }
 
     .home {
@@ -1254,413 +839,84 @@ body:not(.light-theme) .theme-toggle button {
         text-align: center;
     }
 
-    .home .home-content {
-        max-width: 720px;
-    }
-
-    .home-img img {
-        width: 55vw;
-        min-width: 260px;
-    }
-
-    .home .home-content h1 {
-        font-size: 5rem;
-    }
-
-    .home-content h3 {
-        font-size: 2.8rem;
-    }
-
-    .home-content p {
-        font-size: 1.45rem;
-    }
-
-    .social-icons,
-    .home-buttons {
-        justify-content: center;
-    }
-
-    .home-buttons {
-        width: 100%;
-        margin-bottom: 2rem;
-    }
-
-    .experience-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .exp-card {
-        min-height: 560px;
-    }
-
-    .exp-img {
-        height: 220px;
-    }
+    .home-content { max-width: 720px; }
+    .home-img img { width: 55vw; min-width: 260px; }
+    .home-content h1 { font-size: 5rem; }
+    .home-content h3 { font-size: 2.8rem; }
+    .home-content p { font-size: 1.45rem; }
+    .social-icons, .home-buttons { justify-content: center; }
+    .home-buttons { width: 100%; margin-bottom: 2rem; }
+    .experience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .exp-card { min-height: 560px; }
+    .exp-img { height: 220px; }
 }
 
-/* =====================================================
-   17. TABLET: JARAK TOMBOL KHUSUS
-===================================================== */
-
+/* Tablet */
 @media (min-width: 551px) and (max-width: 995px) {
-    header {
-        padding-right: 3rem;
-        padding-left: 3rem;
-    }
-
-    header .menu-btn {
-        right: 3rem;
-    }
-
-    header .theme-toggle {
-        right: 10rem;
-    }
-
-    section {
-        padding-right: 6%;
-        padding-left: 6%;
-    }
-
-    .section-title h2 {
-        font-size: 4.5rem;
-    }
-
-    .home-img img {
-        width: 45vw;
-        min-width: 240px;
-        max-width: 380px;
-    }
-
-    .skills-wrapper {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .experience-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    header { padding-right: 3rem; padding-left: 3rem; }
+    header .menu-btn { right: 12px; }
+    header .theme-toggle { right: 62px; }
+    section { padding-right: 6%; padding-left: 6%; }
+    .section-title h2 { font-size: 4.5rem; }
+    .home-img img { width: 45vw; min-width: 240px; max-width: 380px; }
+    .skills-wrapper { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* =====================================================
-   18. TABLET KECIL DAN HP
-===================================================== */
-
+/* HP dan tablet kecil */
 @media (max-width: 768px) {
-    section {
-        padding: 9rem 7% 6rem;
-    }
-
-    .section-title {
-        margin-bottom: 3.5rem;
-    }
-
-    .section-title h2 {
-        font-size: 4rem;
-    }
-
-    .section-title p {
-        font-size: 1.45rem;
-    }
-
-    .skills-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .skill-group {
-        width: 100%;
-    }
-
-    .skill-item {
-        margin-bottom: 1rem;
-    }
-
-    .skill-tags {
-        justify-content: flex-start;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .exp-card {
-        min-height: 0;
-    }
-
-    .exp-img {
-        height: 250px;
-    }
-
-    .exp-content {
-        padding: 1.8rem;
-    }
-
-    .exp-content h3 {
-        font-size: 1.8rem;
-    }
-
-    .exp-content h4 {
-        font-size: 1.5rem;
-    }
-
-    .faq-wrapper {
-        margin-top: 3rem;
-        gap: 1.2rem;
-    }
-
-    .faq-question {
-        padding: 1.8rem;
-        font-size: 1.4rem;
-    }
-
-    .faq-question i {
-        font-size: 1.2rem;
-    }
-
-    .faq-answer {
-        padding-right: 1.8rem;
-        padding-left: 1.8rem;
-    }
-
-    .faq-answer p {
-        font-size: 1.3rem;
-        line-height: 1.7;
-    }
-
-    .faq-item.active .faq-answer {
-        padding: 0 1.8rem 1.8rem;
-    }
-
-    #education-development > .education-subsection {
-        padding: 3rem 0;
-    }
-
-    #education-development > .education-subsection
-    + .education-subsection {
-        padding-top: 3.5rem;
-    }
-
-    #education-development .subsection-title {
-        margin-bottom: 2rem;
-    }
-
-    #education-development .subsection-title h3 {
-        font-size: 2.5rem;
-    }
-
-    #education-development .skills-wrapper,
-    #education-development #courses-certifications .cards {
-        grid-template-columns: 1fr;
-    }
-
-    #education-development .skills-wrapper {
-        gap: 2rem;
-    }
-
-    #education-development #courses-certifications .cards {
-        gap: 1.5rem;
-    }
-
-    .timeline-item {
-        align-items: flex-start;
-        gap: 1.5rem;
-    }
-
-    .timeline-icon {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-    }
-
-    .timeline-content {
-        padding: 1.8rem;
-    }
-
-    .language-section {
-        align-items: flex-start;
-        gap: 1.5rem;
-    }
-
-    .language-icon {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-        font-size: 2.5rem;
-    }
-
-    .language-box {
-        padding: 1.8rem;
-    }
+    section { padding: 9rem 7% 6rem; }
+    .section-title { margin-bottom: 3.5rem; }
+    .section-title h2 { font-size: 4rem; }
+    .section-title p { font-size: 1.45rem; }
+    .skills-wrapper, .experience-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .skill-group { width: 100%; }
+    .skill-item { margin-bottom: 1rem; }
+    .skill-tags { justify-content: flex-start; }
+    .exp-card { min-height: 0; }
+    .exp-img { height: 250px; }
+    .exp-content { padding: 1.8rem; }
+    .exp-content h3 { font-size: 1.8rem; }
+    .exp-content h4 { font-size: 1.5rem; }
+    .timeline-item { align-items: flex-start; gap: 1.5rem; }
+    .timeline-content { padding: 1.8rem; }
 }
 
-/* =====================================================
-   19. HP: JARAK TOMBOL DAN TATA LETAK
-===================================================== */
-
+/* HP kecil */
 @media (max-width: 550px) {
-    html {
-        font-size: 55%;
-    }
+    html { font-size: 55%; }
+    section { padding: 9rem 6% 5rem; }
+    header { padding: 1.2rem 6%; }
+    .logo { font-size: 2.6rem; }
+    header .menu-btn { right: 12px; }
+    header .theme-toggle { right: 62px; }
+    .home { gap: 3rem; }
+    .home-content h1 { font-size: 4rem; }
+    .home-content h3 { font-size: 2.4rem; }
+    .home-content p { font-size: 1.4rem; }
+    .home-img img { width: 70vw; min-width: 0; }
+    .home-buttons { gap: 1rem; }
+    .home-buttons .btn { padding: 1rem 1.8rem; font-size: 1.35rem; letter-spacing: .1rem; }
+    .section-title h2 { font-size: 3.5rem; }
+    .cards { grid-template-columns: 1fr; }
 
-    section {
-        padding: 9rem 6% 5rem;
-    }
+    .linkedin-style-card { padding: 1.3rem; }
+    .linkedin-style-card .timeline-content { flex-direction: row; gap: 1.2rem; }
+    .timeline-icon-inside { flex-basis: 48px; width: 48px; height: 48px; padding: 4px; }
+    .timeline-text-inside { gap: .4rem; }
+    .timeline-text-inside h3 { font-size: 1.5rem; }
+    .timeline-text-inside h4 { font-size: 1.3rem; }
+    .timeline-text-inside p, .timeline-text-inside li { font-size: 1.2rem; line-height: 1.6; }
 
-    header {
-        padding: 1.2rem 6%;
-    }
-
-    .logo {
-        font-size: 2.6rem;
-    }
-
-    header .menu-btn {
-        right: 2rem;
-    }
-
-    header .theme-toggle {
-        right: 8.5rem;
-    }
-
-    .home {
-        gap: 3rem;
-    }
-
-    .home .home-content h1 {
-        font-size: 4rem;
-    }
-
-    .home-content h3 {
-        font-size: 2.4rem;
-    }
-
-    .home-content p {
-        font-size: 1.4rem;
-    }
-
-    .home-img img {
-        width: 70vw;
-        min-width: 0;
-    }
-
-    .typing-text {
-        font-size: 2.4rem;
-    }
-
-    .home-buttons {
-        gap: 1rem;
-    }
-
-    .home-buttons .btn {
-        padding: 1rem 1.8rem;
-        font-size: 1.35rem;
-        letter-spacing: 0.1rem;
-    }
-
-    .section-title h2 {
-        font-size: 3.5rem;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline-item {
-        gap: 1rem;
-    }
-
-    .timeline-icon {
-        width: 45px;
-        height: 45px;
-        min-width: 45px;
-    }
-
-    .timeline-content {
-        padding: 1.5rem;
-    }
-
-    .timeline-content h3 {
-        font-size: 1.8rem;
-    }
-
-    .timeline-content h4 {
-        font-size: 1.4rem;
-    }
-
-    /* Kartu LinkedIn tetap horizontal */
-    .linkedin-style-card {
-        padding: 1.3rem;
-    }
-
-    .linkedin-style-card .timeline-content {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 1.2rem;
-    }
-
-    .timeline-icon-inside {
-        flex-basis: 48px;
-        width: 48px;
-        height: 48px;
-        padding: 4px;
-    }
-
-    .timeline-text-inside {
-        gap: 0.4rem;
-    }
-
-    .timeline-text-inside h3 {
-        font-size: 1.5rem;
-    }
-
-    .timeline-text-inside h4 {
-        font-size: 1.3rem;
-    }
-
-    .timeline-text-inside p {
-        font-size: 1.2rem;
-        line-height: 1.6;
-    }
-
-    .exp-img {
-        height: 200px;
-    }
-
-    .exp-content {
-        padding: 1.5rem;
-    }
-
-    .language-section {
-        flex-direction: column;
-    }
-
-    .language-icon {
-        width: 50px;
-        height: 50px;
-        min-width: 50px;
-    }
-
-    .language-box {
-        width: 100%;
-    }
-
-    .faq-question {
-        gap: 1rem;
-        padding: 1.5rem;
-    }
+    .exp-img { height: 200px; }
+    .exp-content { padding: 1.5rem; }
 }
 
-/* =====================================================
-   20. AKSESIBILITAS ANIMASI
-===================================================== */
-
+/* Aksesibilitas */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
     }
 }
