@@ -2,150 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Aji Saputro's portfolio showcasing geophysics, GIS surveying, mineral exploration, technical skills, projects, education, and professional certifications."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aji Saputro's portfolio showcasing geophysics, GIS surveying, mineral exploration, technical skills, projects, education, and professional certifications.">
   <meta name="theme-color" content="#0b0b13">
 
-  <title>Aji Saputro | Geophysics & GIS Portfolio</title>
+  <title>Aji Saputro | Geophysics &amp; GIS Portfolio</title>
 
-  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
-
-  <!-- Existing stylesheet -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Additional styles -->
-  <style>
-    html,
-    body {
-      width: 100%;
-      overflow-x: hidden;
-    }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 0;
-}
-
-main > section {
-  scroll-margin-top: 0;
-}
-    .skill-bar span {
-      display: block;
-      width: 0;
-      height: 100%;
-      transition: width 1s ease-in-out;
-    }
-
-/* Six navigation items */
-header nav {
-    display: flex;
-    align-items: center;
-    gap: clamp(16px, 5vw, 32px);
-}
-
-header nav a {
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-    /* Additional skill information */
-    .skills-extra {
-      margin-top: 30px;
-    }
-
-    .skills-extra h3 {
-      margin-bottom: 15px;
-    }
-
-    .skills-note,
-    .section-note {
-      margin-top: 18px;
-      font-size: 1.4rem;
-      line-height: 1.7;
-      opacity: 0.8;
-    }
-
-    /* Education details */
-    .education-list {
-      padding-left: 20px;
-      margin-top: 12px;
-    }
-
-    .education-list li {
-      margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
-    /* Project and certification details */
-    .project-details,
-    .credential-details {
-      margin-top: 16px;
-    }
-
-    .project-details p,
-    .credential-details p {
-      margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
-    .credential-status {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 7px 12px;
-      border: 1px solid currentColor;
-      border-radius: 999px;
-      font-size: 1.2rem;
-      line-height: 1.5;
-    }
-
-    .placeholder-note {
-      opacity: 0.75;
-      font-style: italic;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .skill-bar span {
-        transition: none !important;
-      }
-    }
-
-@media (max-width: 768px) {
-  /* Pengaturan menu navigasi mobile */
-  header nav.active {
-    max-height: calc(100dvh - 95px);
-    overflow-y: auto;
-  }
-
-  header nav a {
-    white-space: normal;
-  }
-}
-  </style>
 </head>
 <body>
-
-  <!-- =====================================================
-       HEADER & NAVIGATION
-  ====================================================== -->
+  <!-- HEADER & NAVIGATION -->
   <header>
-    <a href="#home" class="logo">PORTOFOLIO</a>
+    <a class="logo" href="#home">PORTOFOLIO</a>
 
     <nav id="primary-navigation" aria-label="Main navigation">
       <a href="#home">About</a>
@@ -153,23 +25,21 @@ header nav a {
       <a href="#skills">Skills</a>
       <a href="#project">Projects</a>
       <a href="#education">Education</a>
-      <a href="#licenses-certifications">
-        Licenses &amp; Certifications
-      </a>
+      <a href="#licenses-certifications">Licenses &amp; Certifications</a>
     </nav>
 
     <button
-      type="button"
       class="theme-toggle"
       id="theme-btn"
+      type="button"
       aria-label="Switch to light theme"
     >
       <i class="fa-solid fa-moon" aria-hidden="true"></i>
     </button>
 
     <button
-      type="button"
       class="menu-btn"
+      type="button"
       aria-label="Open navigation"
       aria-controls="primary-navigation"
       aria-expanded="false"
@@ -179,473 +49,261 @@ header nav a {
   </header>
 
   <main>
-
-    <!-- =====================================================
-         SECTION 1: ABOUT
-    ====================================================== -->
+    <!-- 1. ABOUT -->
     <section class="home" id="home">
-
       <div class="home-img">
         <img src="main.jpeg" alt="Aji Saputro">
       </div>
 
       <div class="home-content">
         <h1>Hi, It's <span>Aji Saputro</span></h1>
-
         <p>
           Junior Geophysicist and GIS Surveyor with field experience
-          in mineral exploration, geoelectrical surveying,
-          topographic mapping, drilling validation, and
-          environmental assessment. Experienced in processing
-          and interpreting subsurface and geospatial data using
-          QGIS, Global Mapper, and Res2DInv.
+          in mineral exploration, geoelectrical surveying, topographic
+          mapping, drilling validation, and environmental assessment.
+          Experienced in processing and interpreting subsurface and
+          geospatial data using QGIS, Global Mapper, and Res2DInv.
         </p>
 
         <div class="social-icons">
-          <a
-            href="https://linkedin.com/in/ajimaru410"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
+          <a href="https://linkedin.com/in/ajimaru410" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
           </a>
-
-          <a
-            href="https://instagram.com/ajimaru410"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
+          <a href="https://instagram.com/ajimaru410" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
           </a>
-
-          <a
-            href="tel:+6281253817435"
-            id="phone-link"
-            aria-label="Phone"
-          >
+          <a href="tel:+6281253817435" id="phone-link" aria-label="Phone">
             <i class="fa-solid fa-phone" aria-hidden="true"></i>
           </a>
-
-          <a
-            href="mailto:aji.saputro410@gmail.com"
-            aria-label="Email"
-          >
+          <a href="mailto:aji.saputro410@gmail.com" aria-label="Email">
             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
           </a>
         </div>
 
         <div class="home-buttons">
-          <a
-            href="https://wa.me/6281253817435"
-            class="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="btn" href="https://wa.me/6281253817435" target="_blank" rel="noopener noreferrer">
             Contact Me
           </a>
-
           <a
-            href="https://drive.google.com/file/d/1S5rsENEiGH6wEVPF0EAFZ-vFTesC7BuJ/view"
             class="btn cv-btn"
+            href="https://drive.google.com/file/d/1S5rsENEiGH6wEVPF0EAFZ-vFTesC7BuJ/view"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i
-              class="fa-solid fa-file-arrow-down"
-              aria-hidden="true"
-            ></i>
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
             Download CV
           </a>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         SECTION 2: EXPERIENCE
-    ====================================================== -->
+    <!-- 2. EXPERIENCE — LINKEDIN STYLE -->
     <section class="section" id="experience">
-
       <div class="section-title">
         <h2>My <span>Experience</span></h2>
-        <p>
-          Field and technical experience in geophysics, surveying,
-          GIS, environmental monitoring, and mineral exploration.
-        </p>
       </div>
 
-      <div class="experience-grid">
+      <div class="timeline experience-timeline">
 
-        <article class="exp-card">
-          <div class="exp-img">
-            <img
-              src="foto-kerja-1.jpeg"
-              alt="Junior GIS Surveyor fieldwork"
-              loading="lazy"
-            >
-          </div>
+        <!-- EXPERIENCE 1 -->
+        <article class="linkedin-style-card experience-linkedin-card">
+          <div class="timeline-content">
+            <div class="experience-image-inside">
+              <img
+                src="foto-kerja-1.png"
+                alt="Junior GIS Surveyor fieldwork"
+                loading="lazy"
+              >
+            </div>
 
-          <div class="exp-content">
-            <span class="exp-date">Jan 2026 – Jul 2026</span>
-            <span class="exp-location">Ketapang, Indonesia</span>
+            <div class="timeline-text-inside">
+              <h3>Junior GIS Surveyor</h3>
+              <h4>LBH KALBAR</h4>
 
-            <h3>Junior GIS Surveyor</h3>
-            <h4>LBH KALBAR</h4>
+              <p class="experience-meta">
+                Jan 2026 – Jul 2026
+                <span aria-hidden="true">·</span>
+                Ketapang, Indonesia
+              </p>
 
-            <ol class="exp-list">
-              <li>
-                Conducted topographic surveys and geospatial mapping
-                across 3 active mining blocks and 2 bauxite processing
-                facilities covering 500+ hectares.
-              </li>
-              <li>
-                Monitored surface water quality across 8 major rivers
-                to evaluate environmental impact.
-              </li>
-              <li>
-                Executed soil quality surveys by participating in
-                4 shallow drilling operations.
-              </li>
-              <li>
-                Managed and documented 100+ geospatial and field datasets.
-              </li>
-            </ol>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-img">
-            <img
-              src="foto-kerja-2.png"
-              alt="Junior Geophysicist conducting a field survey"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="exp-content">
-            <span class="exp-date">Jul 2025 – Dec 2025</span>
-            <span class="exp-location">
-              Bengkayang and Sambas, Indonesia
-            </span>
-
-            <h3>Junior Geophysicist</h3>
-            <h4>AMERTA BUMI PRAKASA LP</h4>
-
-            <ol class="exp-list">
-              <li>
-                Executed 12 lines of geoelectric surveys and
-                geospatial mapping covering 200+ hectares.
-              </li>
-              <li>
-                Conducted 6 lines of geoelectric surveys and
-                topographic mapping across 50+ hectares.
-              </li>
-              <li>
-                Performed 18 systematic exploratory drilling
-                operations to validate models.
-              </li>
-              <li>
-                Processed and interpreted 15+ geoelectric
-                datasets using Res2DInv.
-              </li>
-            </ol>
+              <ul class="experience-list">
+                <li>
+                  Conducted topographic surveys and geospatial mapping
+                  across 3 active mining blocks and 2 bauxite processing
+                  facilities covering 500+ hectares.
+                </li>
+                <li>
+                  Monitored surface water quality across 8 major rivers
+                  to evaluate environmental impact.
+                </li>
+                <li>
+                  Executed soil quality surveys by participating in
+                  4 shallow drilling operations.
+                </li>
+                <li>
+                  Managed and documented 100+ geospatial and field datasets.
+                </li>
+              </ul>
+            </div>
           </div>
         </article>
 
-        <article class="exp-card">
-          <div class="exp-img">
-            <img
-              src="foto-kerja-3.jpg"
-              alt="Undergraduate fieldwork teaching assistant"
-              loading="lazy"
-            >
-          </div>
+        <!-- EXPERIENCE 2 -->
+        <article class="linkedin-style-card experience-linkedin-card">
+          <div class="timeline-content">
+            <div class="experience-image-inside">
+              <img
+                src="foto-kerja-2.png"
+                alt="Junior Geophysicist conducting a field survey"
+                loading="lazy"
+              >
+            </div>
 
-          <div class="exp-content">
-            <span class="exp-date">
-              May–June 2023 &amp; May–June 2024
-            </span>
+            <div class="timeline-text-inside">
+              <h3>Junior Geophysicist</h3>
+              <h4>AMERTA BUMI PRAKASA LP</h4>
 
-            <span class="exp-location">Pontianak, Indonesia</span>
+              <p class="experience-meta">
+                Jul 2025 – Dec 2025
+                <span aria-hidden="true">·</span>
+                Bengkayang and Sambas, Indonesia
+              </p>
 
-            <h3>Undergraduate Fieldwork Teaching Assistant</h3>
-            <h4>TANJUNGPURA UNIVERSITY</h4>
-
-            <ol class="exp-list">
-              <li>
-                Coordinated equipment deployment and facilitated
-                field data acquisition.
-              </li>
-              <li>
-                Guided 20+ students through data inversion,
-                processing using Res2DInv, and quality control.
-              </li>
-              <li>
-                Instructed students on water resource
-                measurement techniques.
-              </li>
-            </ol>
+              <ul class="experience-list">
+                <li>
+                  Executed 12 lines of geoelectric surveys and
+                  geospatial mapping covering 200+ hectares.
+                </li>
+                <li>
+                  Conducted 6 lines of geoelectric surveys and
+                  topographic mapping across 50+ hectares.
+                </li>
+                <li>
+                  Performed 18 systematic exploratory drilling
+                  operations to validate models.
+                </li>
+                <li>
+                  Processed and interpreted 15+ geoelectric
+                  datasets using Res2DInv.
+                </li>
+              </ul>
+            </div>
           </div>
         </article>
 
+        <!-- EXPERIENCE 3 -->
+        <article class="linkedin-style-card experience-linkedin-card">
+          <div class="timeline-content">
+            <div class="experience-image-inside">
+              <img
+                src="foto-kerja-3.png"
+                alt="Undergraduate fieldwork teaching assistant"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="timeline-text-inside">
+              <h3>Undergraduate Fieldwork Teaching Assistant</h3>
+              <h4>TANJUNGPURA UNIVERSITY</h4>
+
+              <p class="experience-meta">
+                May–June 2023 &amp; May–June 2024
+                <span aria-hidden="true">·</span>
+                Pontianak, Indonesia
+              </p>
+
+              <ul class="experience-list">
+                <li>
+                  Coordinated equipment deployment and facilitated
+                  field data acquisition.
+                </li>
+                <li>
+                  Guided 20+ students through data inversion,
+                  processing using Res2DInv, and quality control.
+                </li>
+                <li>
+                  Instructed students on water resource
+                  measurement techniques.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- =====================================================
-         SECTION 3: SKILLS
-    ====================================================== -->
-    <section class="section" id="skills">
 
+    <!-- 3. SKILLS -->
+    <section class="section" id="skills">
       <div class="section-title">
         <h2>My <span>Skills</span></h2>
-        <p>
-          Technical competencies, surveying instruments,
-          geoscience analysis, GIS, and professional software tools.
-        </p>
       </div>
 
       <div class="skills-wrapper">
-<!--Technical skills, surveying instruments, geoscience analysis, GIS, and professional software tools-->
-<div class="skill-group">
-  <h3>
-    <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-    Technical Skills
-  </h3>
-
-  <div class="skill-item">
-    <div class="skill-info">
-      <span>
-        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-        GIS &amp; Mapping
-      </span>
-      <span class="skill-level">Advanced</span>
-    </div>
-    <div class="skill-bar">
-      <span style="width: 90%"></span>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <div class="skill-info">
-      <span>
-        <i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
-        Land Surveying
-      </span>
-      <span class="skill-level">Proficient</span>
-    </div>
-    <div class="skill-bar">
-      <span style="width: 70%"></span>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <div class="skill-info">
-      <span>
-        <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
-        Topographic Mapping
-      </span>
-      <span class="skill-level">Proficient</span>
-    </div>
-    <div class="skill-bar">
-      <span style="width: 80%"></span>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <div class="skill-info">
-      <span>
-        <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-        Geophysical Data Processing
-      </span>
-      <span class="skill-level">Intermediate</span>
-    </div>
-    <div class="skill-bar">
-      <span style="width: 50%"></span>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <div class="skill-info">
-      <span>
-        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-        Electrical Resistivity/IP
-      </span>
-      <span class="skill-level">Proficient</span>
-    </div>
-    <div class="skill-bar">
-      <span style="width: 80%"></span>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <div class="skill-info">
-      <span>
-        <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
-        Spatial Data Analysis
-      </span>
-      <span class="skill-level">Intermediate</span>
-    </div>
-    <div class="skill-bar">
-      <span style="width: 60%"></span>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <div class="skill-info">
-      <span>
-        <i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i>
-        Environmental Monitoring
-      </span>
-      <span class="skill-level">Intermediate</span>
-    </div>
-    <div class="skill-bar">
-      <span style="width: 50%"></span>
-    </div>
-  </div>
-
-  <p class="skills-note">
-    Skill levels reflect practical experience and familiarity
-    with relevant tools, methods, and technical workflows.
-  </p>
-</div>
-
         <div class="skill-group">
-          <h3>
-            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
-            Software &amp; Professional Skills
-          </h3>
+          <h3><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Technical Skills</h3>
 
-          <div class="skill-tags">
-            <span class="app-tag">
-              <img src="qgis-logo.png" alt="" class="app-icon" loading="lazy">
-              QGIS
-            </span>
-
-            <span class="app-tag">
-              <img src="arcgis-logo.png" alt="" class="app-icon" loading="lazy">
-              ArcGIS
-            </span>
-
-            <span class="app-tag">
-              <img src="gbp-logo.png" alt="" class="app-icon" loading="lazy">
-              Global Mapper
-            </span>
-
-            <span class="app-tag">
-              <i class="fa-solid fa-wave-square app-icon" aria-hidden="true"></i>
-              Res2DInv
-            </span>
-
-            <span class="app-tag">
-              <img src="oas-logo.png" alt="" class="app-icon" loading="lazy">
-              Oasis Montaj
-            </span>
-
-            <span class="app-tag">
-              <img src="auto-logo.png" alt="" class="app-icon" loading="lazy">
-              AutoCAD
-            </span>
-
-            <span class="app-tag">
-              <img src="skkt-logo.png" alt="" class="app-icon" loading="lazy">
-              SketchUp
-            </span>
-
-            <span class="app-tag">
-              <img src="odv-logo.png" alt="" class="app-icon" loading="lazy">
-              ODV
-            </span>
-
-            <span class="app-tag">
-              <img src="mtlab-logo.png" alt="" class="app-icon" loading="lazy">
-              MATLAB
-            </span>
-
-            <span class="app-tag">
-              <img src="pyton-logo.png" alt="" class="app-icon" loading="lazy">
-              Python
-            </span>
-
-            <span class="app-tag">
-              <img src="oct-logo.png" alt="" class="app-icon" loading="lazy">
-              Octave
-            </span>
-
-            <span class="app-tag">
-              <img src="vsc-logo.png" alt="" class="app-icon" loading="lazy">
-              VS Code
-            </span>
-
-            <span class="app-tag">
-              <img src="ggs-logo.png" alt="" class="app-icon" loading="lazy">
-              Google Sheets
-            </span>
-
-            <span class="app-tag">
-              <img src="pss-logo.png" alt="" class="app-icon" loading="lazy">
-              Photoshop
-            </span>
-
-            <span class="app-tag">
-              <img src="word-logo.png" alt="" class="app-icon" loading="lazy">
-              MS Word
-            </span>
-
-            <span class="app-tag">
-              <img src="excel-logo.png" alt="" class="app-icon" loading="lazy">
-              MS Excel
-            </span>
-
-            <span class="app-tag">
-              <img src="point-logo.png" alt="" class="app-icon" loading="lazy">
-              MS PowerPoint
-            </span>
-
-            <span class="app-tag">
-              <img src="outl-logo.png" alt="" class="app-icon" loading="lazy">
-              MS Outlook
-            </span>
-
-            <span class="app-tag">
-              <img src="aces-logo.png" alt="" class="app-icon" loading="lazy">
-              MS Access
-            </span>
-
-            <span class="app-tag">
-              <img src="publis-logo.png" alt="" class="app-icon" loading="lazy">
-              MS Publisher
-            </span>
-
-            <span class="app-tag">
-              <img src="ont-logo.png" alt="" class="app-icon" loading="lazy">
-              MS OneNote
-            </span>
-
-            <span class="app-tag">
-              <img src="laporan-logo.png" alt="" class="app-icon" loading="lazy">
-              Technical Report Writing
-            </span>
-          </div>
-
-          <div class="skills-extra">
-            <h3>
-              <i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
-              Surveying Instruments
-            </h3>
-
-            <div class="skill-tags">
-              <span class="app-tag">Total Station</span>
-              <span class="app-tag">Auto Level</span>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> GIS &amp; Mapping</span>
+              <span class="skill-level">Advanced</span>
             </div>
+            <div class="skill-bar"><span style="width: 90%"></span></div>
           </div>
 
-          <div class="skills-extra">
-            <h3>
-              <i class="fa-solid fa-language" aria-hidden="true"></i>
-              Languages
-            </h3>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i> Land Surveying</span>
+              <span class="skill-level">Proficient</span>
+            </div>
+            <div class="skill-bar"><span style="width: 70%"></span></div>
+          </div>
 
+          <div class="skill-item">
+            <div class="skill-info">
+              <span><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> Topographic Mapping</span>
+              <span class="skill-level">Proficient</span>
+            </div>
+            <div class="skill-bar"><span style="width: 80%"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Geophysical Data Processing</span>
+              <span class="skill-level">Intermediate</span>
+            </div>
+            <div class="skill-bar"><span style="width: 50%"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span><i class="fa-solid fa-bolt" aria-hidden="true"></i> Electrical Resistivity/IP</span>
+              <span class="skill-level">Proficient</span>
+            </div>
+            <div class="skill-bar"><span style="width: 80%"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i> Spatial Data Analysis</span>
+              <span class="skill-level">Intermediate</span>
+            </div>
+            <div class="skill-bar"><span style="width: 60%"></span></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span><i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i> Environmental Monitoring</span>
+              <span class="skill-level">Intermediate</span>
+            </div>
+            <div class="skill-bar"><span style="width: 50%"></span></div>
+          </div>
+          <p class="skills-note">
+            Skill levels reflect practical experience and familiarity with relevant tools, methods, and technical workflows.
+          </p>
+
+          <div class="skills-extra">
+            <h3><i class="fa-solid fa-language" aria-hidden="true"></i> Languages</h3>
             <div class="skill-tags">
               <span class="app-tag">Bahasa Indonesia — Fluent</span>
               <span class="app-tag">Javanese — Fluent</span>
@@ -654,521 +312,338 @@ header nav a {
           </div>
         </div>
 
+        <div class="skill-group">
+          <h3><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Software &amp; Professional Skills</h3>
+
+          <div class="skill-tags">
+            <span class="app-tag"><img src="qgis-logo.png" alt="" class="app-icon" loading="lazy">QGIS</span>
+            <span class="app-tag"><img src="arcgis-logo.png" alt="" class="app-icon" loading="lazy">ArcGIS</span>
+            <span class="app-tag"><img src="gbp-logo.png" alt="" class="app-icon" loading="lazy">Global Mapper</span>
+            <span class="app-tag"><i class="fa-solid fa-wave-square app-icon" aria-hidden="true"></i>Res2DInv</span>
+            <span class="app-tag"><img src="oas-logo.png" alt="" class="app-icon" loading="lazy">Oasis Montaj</span>
+            <span class="app-tag"><img src="auto-logo.png" alt="" class="app-icon" loading="lazy">AutoCAD</span>
+            <span class="app-tag"><img src="skkt-logo.png" alt="" class="app-icon" loading="lazy">SketchUp</span>
+            <span class="app-tag"><img src="odv-logo.png" alt="" class="app-icon" loading="lazy">ODV</span>
+            <span class="app-tag"><img src="mtlab-logo.png" alt="" class="app-icon" loading="lazy">MATLAB</span>
+            <span class="app-tag"><img src="pyton-logo.png" alt="" class="app-icon" loading="lazy">Python</span>
+            <span class="app-tag"><img src="oct-logo.png" alt="" class="app-icon" loading="lazy">Octave</span>
+            <span class="app-tag"><img src="vsc-logo.png" alt="" class="app-icon" loading="lazy">VS Code</span>
+            <span class="app-tag"><img src="ggs-logo.png" alt="" class="app-icon" loading="lazy">Google Sheets</span>
+            <span class="app-tag"><img src="pss-logo.png" alt="" class="app-icon" loading="lazy">Photoshop</span>
+            <span class="app-tag"><img src="word-logo.png" alt="" class="app-icon" loading="lazy">MS Word</span>
+            <span class="app-tag"><img src="excel-logo.png" alt="" class="app-icon" loading="lazy">MS Excel</span>
+            <span class="app-tag"><img src="point-logo.png" alt="" class="app-icon" loading="lazy">MS PowerPoint</span>
+            <span class="app-tag"><img src="outl-logo.png" alt="" class="app-icon" loading="lazy">MS Outlook</span>
+            <span class="app-tag"><img src="aces-logo.png" alt="" class="app-icon" loading="lazy">MS Access</span>
+            <span class="app-tag"><img src="publis-logo.png" alt="" class="app-icon" loading="lazy">MS Publisher</span>
+            <span class="app-tag"><img src="ont-logo.png" alt="" class="app-icon" loading="lazy">MS OneNote</span>
+            <span class="app-tag"><img src="laporan-logo.png" alt="" class="app-icon" loading="lazy">Technical Report Writing</span>
+          </div>
+
+          <div class="skills-extra">
+            <h3><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i> Surveying Instruments</h3>
+            <div class="skill-tags">
+              <span class="app-tag">Total Station</span>
+              <span class="app-tag">Auto Level</span>
+              <span class="app-tag">GPS</span>
+              <span class="app-tag">Electrical Resistivity meter</span>
+              <span class="app-tag">Automatic Weather Station</span>
+              <span class="app-tag">Barometer</span>
+              <span class="app-tag">Water Quality Checker</span>
+              <span class="app-tag">Refractometer</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         SECTION 4: PROJECTS
-    ====================================================== -->
+    <!-- 4. PROJECTS -->
     <section class="section" id="project">
-
       <div class="section-title">
         <h2>My <span>Projects</span></h2>
-        <p>
-          Geoscience and geospatial work covering field surveys,
-          mapping, data processing, and subsurface interpretation.
-        </p>
+        <p>Geoscience and geospatial work covering field surveys, mapping, data processing, and subsurface interpretation.</p>
       </div>
 
       <div class="cards">
-
         <article class="card">
           <i class="fa-solid fa-magnet" aria-hidden="true"></i>
           <h3>Geophysical Survey</h3>
-
-          <p>
-            Geoelectrical survey projects covering field data
-            acquisition, processing, visualization, and
-            subsurface interpretation.
-          </p>
-
+          <p>Geoelectrical survey projects covering field data acquisition, processing, visualization, and subsurface interpretation.</p>
           <div class="project-details">
-            <p>
-              <strong>Tools:</strong> Res2DInv
-            </p>
-            <p>
-              <strong>Focus:</strong>
-              Resistivity data processing and subsurface interpretation.
-            </p>
-
-            <!--
-              Tambahkan gambar penampang resistivitas atau tautan
-              laporan proyek yang benar-benar tersedia di sini.
-            -->
+            <p><strong>Tools:</strong> Res2DInv</p>
+            <p><strong>Focus:</strong> Resistivity data processing and subsurface interpretation.</p>
+            <!-- Add an actual resistivity section image or project report link when available. -->
           </div>
         </article>
 
         <article class="card">
           <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
           <h3>GIS &amp; Mapping</h3>
-
-          <p>
-            Geospatial mapping projects involving spatial data
-            processing, topographic mapping, and map visualization.
-          </p>
-
+          <p>Geospatial mapping projects involving spatial data processing, topographic mapping, and map visualization.</p>
           <div class="project-details">
-            <p>
-              <strong>Tools:</strong> QGIS and Global Mapper
-            </p>
-            <p>
-              <strong>Focus:</strong>
-              Topographic mapping and geospatial data organization.
-            </p>
-
-            <!--
-              Tambahkan gambar hasil pemetaan atau tautan
-              dokumen peta yang tersedia di sini.
-            -->
+            <p><strong>Tools:</strong> QGIS and Global Mapper</p>
+            <p><strong>Focus:</strong> Topographic mapping and geospatial data organization.</p>
+            <!-- Add an actual map image or document link when available. -->
           </div>
         </article>
 
         <article class="card">
           <i class="fa-solid fa-mountain" aria-hidden="true"></i>
           <h3>Mineral Exploration</h3>
-
-          <p>
-            Geological exploration projects involving field
-            observations, drilling validation, and geological
-            data integration.
-          </p>
-
+          <p>Geological exploration projects involving field observations, drilling validation, and geological data integration.</p>
           <div class="project-details">
-            <p>
-              <strong>Methods:</strong>
-              Field observations and exploratory drilling validation.
-            </p>
-            <p>
-              <strong>Focus:</strong>
-              Integration of field observations with subsurface models.
-            </p>
-
-            <!--
-              Tambahkan dokumentasi eksplorasi yang diizinkan
-              untuk dipublikasikan di sini.
-            -->
+            <p><strong>Methods:</strong> Field observations and exploratory drilling validation.</p>
+            <p><strong>Focus:</strong> Integration of field observations with subsurface models.</p>
+            <!-- Add exploration documentation that is approved for publication. -->
           </div>
         </article>
 
         <article class="card">
           <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
           <h3>Geospatial Data Analysis</h3>
-
-          <p>
-            Data analysis projects focused on organizing,
-            processing, and interpreting geophysical and
-            geospatial datasets to support technical decision-making.
-          </p>
-
+          <p>Data analysis projects focused on organizing, processing, and interpreting geophysical and geospatial datasets to support technical decision-making.</p>
           <div class="project-details">
-            <p>
-              <strong>Focus:</strong>
-              Dataset organization, spatial analysis, and interpretation.
-            </p>
-
-            <!--
-              Tambahkan visualisasi, ringkasan hasil analisis,
-              atau tautan proyek yang tersedia di sini.
-            -->
+            <p><strong>Focus:</strong> Dataset organization, spatial analysis, and interpretation.</p>
+            <!-- Add a visualization, analysis summary, or project link when available. -->
           </div>
         </article>
-
       </div>
     </section>
 
-    <!-- =====================================================
-         SECTION 5: EDUCATION
-    ====================================================== -->
+    <!-- 5. EDUCATION -->
     <section class="section" id="education">
-
       <div class="section-title">
         <h2>My <span>Education</span></h2>
-        <p>
-          Academic background in Geophysics and Geomatics Engineering.
-        </p>
+
       </div>
 
       <div class="timeline">
-
         <article class="timeline-item linkedin-style-card">
           <div class="timeline-content">
-
             <div class="timeline-icon-inside">
-              <img
-                src="logo-untan.png"
-                alt="Tanjungpura University logo"
-                class="school-logo-inside"
-                loading="lazy"
-              >
+              <img src="logo-untan.png" alt="Tanjungpura University logo" class="school-logo-inside" loading="lazy">
             </div>
-
             <div class="timeline-text-inside">
               <h3>Geophysics</h3>
               <h4>Tanjungpura University</h4>
-
               <ul class="education-list">
                 <li>Cumulative GPA: 3.28/4.0.</li>
                 <li>Indonesian Geophysics Student Association.</li>
-                <li>
-                  Thesis: Comparative Analysis of Weibull and
-                  Rayleigh Distributions for Identifying Dominant
-                  Wind Speeds in Ketapang Regency.
-                </li>
+                <li>Thesis: Comparative Analysis of Weibull and Rayleigh Distributions for Identifying Dominant Wind Speeds in Ketapang Regency.</li>
               </ul>
             </div>
-
           </div>
         </article>
 
         <article class="timeline-item linkedin-style-card">
           <div class="timeline-content">
-
             <div class="timeline-icon-inside">
-              <img
-                src="logo-smk4.png"
-                alt="SMK Negeri 4 Pontianak logo"
-                class="school-logo-inside"
-                loading="lazy"
-              >
+              <img src="logo-smk4.png" alt="SMK Negeri 4 Pontianak logo" class="school-logo-inside" loading="lazy">
             </div>
-
             <div class="timeline-text-inside">
               <h3>Geomatics Engineering</h3>
               <h4>SMK Negeri 4 Pontianak</h4>
-
               <ul class="education-list">
-                <li>
-                  Focused on topographic surveying, spatial mapping,
-                  contouring, GIS data entry, and coordinate calculations.
-                </li>
-                <li>
-                  Practical experience operating Total Station
-                  and Auto Level surveying instruments.
-                </li>
+                <li>Focused on topographic surveying, spatial mapping, contouring, GIS data entry, and coordinate calculations.</li>
+                <li>Practical experience operating Total Station and Auto Level surveying instruments.</li>
               </ul>
             </div>
-
           </div>
         </article>
-
       </div>
     </section>
 
-    <!-- =====================================================
-         SECTION 6: LICENSES & CERTIFICATIONS
-    ====================================================== -->
+    <!-- 6. LICENSES & CERTIFICATIONS -->
     <section class="section" id="licenses-certifications">
-
       <div class="section-title">
         <h2>Licenses <span>&amp; Certifications</span></h2>
-        <p>
-          Competency qualifications and professional training
-          in surveying, geophysics, GIS, and mineral exploration.
-        </p>
+        <p>Competency qualifications and professional training in surveying, geophysics, GIS, and mineral exploration.</p>
       </div>
 
       <div class="cards">
-
-        <!--
-          Berdasarkan informasi UKK pada kode asli.
-          Lengkapi penerbit, tanggal, dan tautan sesuai dokumen.
-        -->
         <article class="card">
           <i class="fa-solid fa-award" aria-hidden="true"></i>
-
           <h3>Land Surveying Competency — UKK</h3>
-
-          <p>
-            Vocational Competency Certification (UKK):
-            Competent in Land Surveying.
-          </p>
-
+          <p>Vocational Competency Certification (UKK): Competent in Land Surveying.</p>
           <div class="credential-details">
-            <p>
-              <strong>Education:</strong>
-              Geomatics Engineering, SMK Negeri 4 Pontianak.
-            </p>
-
-            <!--
-              Tambahkan penerbit, tanggal, nomor sertifikat,
-              dan tautan dokumen sesuai sertifikat asli.
-            -->
+            <p><strong>Education:</strong> Geomatics Engineering, SMK Negeri 4 Pontianak.</p>
+            <!-- Add the issuer, date, certificate number, and original document link when confirmed. -->
           </div>
         </article>
 
-        <!--
-          TEMPLATE:
-          Belum dianggap sebagai pelatihan yang sudah diikuti.
-          Lengkapi dengan data asli atau hapus sebelum publikasi.
-        -->
         <article class="card">
           <i class="fa-solid fa-certificate" aria-hidden="true"></i>
           <h3>Geophysical Survey</h3>
-
-          <p>
-            Training in geophysical survey methods,
-            geoelectrical measurements, field data acquisition,
-            and subsurface interpretation.
-          </p>
-
+          <p>Training in geophysical survey methods, geoelectrical measurements, field data acquisition, and subsurface interpretation.</p>
           <div class="credential-details">
             <p><strong>Organizer:</strong> [Training Provider]</p>
             <p><strong>Issued:</strong> [Month Year]</p>
           </div>
-
-          <span class="credential-status">
-            Template — details pending
-          </span>
-
-          <!--
-            Setelah data valid tersedia, tambahkan:
-            <a
-              href="TAUTAN_SERTIFIKAT_ASLI"
-              class="btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Certificate
-            </a>
-          -->
+          <span class="credential-status">Template — details pending</span>
         </article>
 
         <article class="card">
           <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
           <h3>GIS &amp; Geospatial Mapping</h3>
-
-          <p>
-            Training in GIS data processing, spatial analysis,
-            digital mapping, and geospatial visualization
-            using QGIS and Global Mapper.
-          </p>
-
+          <p>Training in GIS data processing, spatial analysis, digital mapping, and geospatial visualization using QGIS and Global Mapper.</p>
           <div class="credential-details">
             <p><strong>Organizer:</strong> [Training Provider]</p>
             <p><strong>Issued:</strong> [Month Year]</p>
           </div>
-
-          <span class="credential-status">
-            Template — details pending
-          </span>
+          <span class="credential-status">Template — details pending</span>
         </article>
 
         <article class="card">
           <i class="fa-solid fa-mountain" aria-hidden="true"></i>
           <h3>Mineral Exploration</h3>
-
-          <p>
-            Training related to geological field observations,
-            mineral exploration activities, and exploration
-            data collection.
-          </p>
-
+          <p>Training related to geological field observations, mineral exploration activities, and exploration data collection.</p>
           <div class="credential-details">
             <p><strong>Organizer:</strong> [Training Provider]</p>
             <p><strong>Issued:</strong> [Month Year]</p>
           </div>
-
-          <span class="credential-status">
-            Template — details pending
-          </span>
+          <span class="credential-status">Template — details pending</span>
         </article>
-
-        <article class="card">
-          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-          <h3>Geoelectrical Data Processing</h3>
-
-          <p>
-            Practical learning in resistivity data processing,
-            geoelectrical analysis, and subsurface visualization
-            using Res2DInv.
-          </p>
-
-          <div class="credential-details">
-            <p><strong>Organizer:</strong> [Training Provider]</p>
-            <p><strong>Issued:</strong> [Month Year]</p>
-          </div>
-
-          <span class="credential-status">
-            Template — details pending
-          </span>
-        </article>
-
       </div>
     </section>
-
   </main>
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
   <footer>
     <p>© 2026 Aji Saputro. All Rights Reserved.</p>
   </footer>
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // -------------------------------------------------
-      // 1. DARK / LIGHT THEME
-      // -------------------------------------------------
-      const themeBtn = document.getElementById("theme-btn");
-      const themeIcon = themeBtn.querySelector("i");
+      // Theme toggle
+      const themeButton = document.getElementById("theme-btn");
+      const themeIcon = themeButton.querySelector("i");
 
       function applyTheme(isLight) {
         document.body.classList.toggle("light-theme", isLight);
-
         themeIcon.classList.toggle("fa-sun", isLight);
         themeIcon.classList.toggle("fa-moon", !isLight);
-
-        themeBtn.setAttribute(
+        themeButton.setAttribute(
           "aria-label",
-          isLight
-            ? "Switch to dark theme"
-            : "Switch to light theme"
+          isLight ? "Switch to dark theme" : "Switch to light theme"
         );
       }
 
       try {
         const savedTheme = localStorage.getItem("portfolio-theme");
-
-        if (savedTheme) {
-          applyTheme(savedTheme === "light");
-        }
+        if (savedTheme) applyTheme(savedTheme === "light");
       } catch {
-        // Theme still works when localStorage is unavailable.
+        // The theme toggle still works when storage is unavailable.
       }
 
-      themeBtn.addEventListener("click", () => {
-        const isLight =
-          !document.body.classList.contains("light-theme");
-
+      themeButton.addEventListener("click", () => {
+        const isLight = !document.body.classList.contains("light-theme");
         applyTheme(isLight);
 
         try {
-          localStorage.setItem(
-            "portfolio-theme",
-            isLight ? "light" : "dark"
-          );
+          localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
         } catch {
           // Ignore storage restrictions.
         }
       });
 
-      // -------------------------------------------------
-      // 2. MOBILE NAVIGATION
-      // -------------------------------------------------
-      const menuBtn = document.querySelector(".menu-btn");
-      const nav = document.getElementById("primary-navigation");
-      const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+      // Mobile navigation
+      const menuButton = document.querySelector(".menu-btn");
+      const navigation = document.getElementById("primary-navigation");
+      const navigationLinks = [...navigation.querySelectorAll('a[href^="#"]')];
 
-      function closeMobileMenu() {
-        nav.classList.remove("active");
+      function setMenuOpen(isOpen) {
+        const isMobileLayout = window.matchMedia("(max-width: 995px)").matches;
+        navigation.classList.toggle("active", isOpen);
 
-        menuBtn.innerHTML =
-          '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+        // Tetapkan paparan secara langsung pada layout menu dropdown supaya
+        // aturan CSS lain tidak menghalang menu daripada terbuka di HP.
+        if (isMobileLayout) {
+          navigation.style.display = isOpen ? "flex" : "none";
+        } else {
+          navigation.style.removeProperty("display");
+        }
 
-        menuBtn.setAttribute("aria-expanded", "false");
-        menuBtn.setAttribute("aria-label", "Open navigation");
-      }
-
-      menuBtn.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("active");
-
-        menuBtn.innerHTML = isOpen
+        menuButton.innerHTML = isOpen
           ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
           : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-
-        menuBtn.setAttribute("aria-expanded", String(isOpen));
-
-        menuBtn.setAttribute(
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
           "aria-label",
           isOpen ? "Close navigation" : "Open navigation"
         );
+      }
+
+      function closeMobileMenu() {
+        setMenuOpen(false);
+      }
+
+      menuButton.addEventListener("click", () => {
+        setMenuOpen(!navigation.classList.contains("active"));
       });
 
-      navLinks.forEach(link => {
+      navigationLinks.forEach(link => {
         link.addEventListener("click", closeMobileMenu);
       });
 
+      // Pastikan paparan navigasi menyesuaikan diri apabila saiz skrin berubah.
+      window.addEventListener("resize", () => {
+        if (window.matchMedia("(max-width: 995px)").matches) {
+          navigation.style.display = navigation.classList.contains("active")
+            ? "flex"
+            : "none";
+        } else {
+          navigation.style.removeProperty("display");
+          setMenuOpen(false);
+        }
+      });
+
       document.addEventListener("keydown", event => {
-        if (event.key === "Escape") {
-          const wasOpen = nav.classList.contains("active");
-
+        if (event.key === "Escape" && navigation.classList.contains("active")) {
           closeMobileMenu();
-
-          if (wasOpen) {
-            menuBtn.focus();
-          }
+          menuButton.focus();
         }
       });
 
       document.addEventListener("click", event => {
-        if (
-          !nav.contains(event.target) &&
-          !menuBtn.contains(event.target)
-        ) {
+        if (!navigation.contains(event.target) && !menuButton.contains(event.target)) {
           closeMobileMenu();
         }
       });
 
-      // -------------------------------------------------
-      // 3. ACTIVE NAVIGATION
-      //    Follows the six links automatically.
-      // -------------------------------------------------
-      const mainSections = navLinks
-        .map(link => {
-          const id = link.getAttribute("href").slice(1);
-          return document.getElementById(id);
-        })
+      // Highlight the navigation link for the current section
+      const sections = navigationLinks
+        .map(link => document.getElementById(link.getAttribute("href").slice(1)))
         .filter(Boolean);
 
       function updateActiveNavigation() {
-        const header = document.querySelector("header");
-        const offset = header.getBoundingClientRect().height + 30;
-        const scrollPosition = window.scrollY + offset;
+        const headerHeight = document.querySelector("header").getBoundingClientRect().height;
+        const scrollPosition = window.scrollY + headerHeight + 30;
+        let currentId = sections[0]?.id || "home";
 
-        let currentSection = mainSections[0]?.id || "home";
-
-        mainSections.forEach(section => {
-          const sectionTop =
-            section.getBoundingClientRect().top + window.scrollY;
-
-          if (scrollPosition >= sectionTop) {
-            currentSection = section.id;
-          }
+        sections.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          if (scrollPosition >= sectionTop) currentId = section.id;
         });
 
         const atPageBottom =
           Math.ceil(window.scrollY + window.innerHeight) >=
           document.documentElement.scrollHeight - 2;
 
-        if (atPageBottom && mainSections.length) {
-          currentSection = mainSections[mainSections.length - 1].id;
+        if (atPageBottom && sections.length) {
+          currentId = sections[sections.length - 1].id;
         }
 
-        navLinks.forEach(link => {
-          const isActive =
-            link.getAttribute("href") === "#" + currentSection;
-
+        navigationLinks.forEach(link => {
+          const isActive = link.getAttribute("href") === `#${currentId}`;
           link.classList.toggle("active", isActive);
-
-          if (isActive) {
-            link.setAttribute("aria-current", "location");
-          } else {
-            link.removeAttribute("aria-current");
-          }
+          if (isActive) link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
         });
       }
 
       let scrollUpdatePending = false;
-
       window.addEventListener("scroll", () => {
         if (scrollUpdatePending) return;
-
         scrollUpdatePending = true;
-
         requestAnimationFrame(() => {
           updateActiveNavigation();
           scrollUpdatePending = false;
@@ -1177,161 +652,105 @@ header nav a {
 
       window.addEventListener("resize", updateActiveNavigation);
       window.addEventListener("load", updateActiveNavigation);
-
       updateActiveNavigation();
 
-      // -------------------------------------------------
-      // 4. SKILL PROGRESS ANIMATION
-      //    Animate once when visible.
-      // -------------------------------------------------
-      const skillItems = document.querySelectorAll(".skill-item");
+      // Use WhatsApp for desktop clicks on the phone icon
+      const phoneLink = document.getElementById("phone-link");
+      const mobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-      const reducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+      if (phoneLink && !mobileUserAgent) {
+        phoneLink.href = "https://wa.me/6281253817435";
+        phoneLink.target = "_blank";
+        phoneLink.rel = "noopener noreferrer";
+        phoneLink.setAttribute("aria-label", "Contact via WhatsApp");
+      }
+
+
+      // TECHNICAL SKILLS — REPEAT BAR ANIMATION ON SCROLL
+      const technicalSkillItems = document.querySelectorAll(
+        '#skills .skills-wrapper > .skill-group:first-child .skill-item'
+      );
+
+      const reduceSkillMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
       ).matches;
 
-      function getSkillValue(item) {
-        const value = Number.parseInt(item.dataset.skill, 10) || 0;
-        return Math.max(0, Math.min(100, value));
-      }
+      // Simpan target asli dari width pada HTML.
+      technicalSkillItems.forEach(item => {
+        const bar = item.querySelector('.skill-bar span');
+        if (!bar) return;
 
-      function showFinalSkill(item) {
-        const value = getSkillValue(item);
-        const bar = item.querySelector(".skill-bar span");
-        const number = item.querySelector(".skill-number");
+        bar.dataset.targetWidth =
+          bar.dataset.targetWidth || bar.style.width || '0%';
+      });
 
-        if (!bar || !number) return;
-
-        bar.style.width = value + "%";
-        number.textContent = value + "%";
-        item.classList.add("animated");
-      }
-
-      function animateSkill(item) {
-        if (item.classList.contains("animated")) return;
-
-        const bar = item.querySelector(".skill-bar span");
-        const number = item.querySelector(".skill-number");
-        const target = getSkillValue(item);
-
-        if (!bar || !number) return;
-
-        item.classList.add("animated");
-
-        const duration = 1000;
-        let startTime = null;
-
-        function step(timestamp) {
-          if (startTime === null) {
-            startTime = timestamp;
-          }
-
-          const progress = Math.min(
-            (timestamp - startTime) / duration,
-            1
-          );
-
-          const value = Math.round(target * progress);
-
-          bar.style.width = value + "%";
-          number.textContent = value + "%";
-
-          if (progress < 1) {
-            requestAnimationFrame(step);
-          }
-        }
-
-        requestAnimationFrame(step);
-      }
-
+      // Tanpa animasi jika diminta oleh pengaturan perangkat.
       if (
-        reducedMotion ||
-        !("IntersectionObserver" in window)
+        reduceSkillMotion ||
+        !('IntersectionObserver' in window)
       ) {
-        skillItems.forEach(showFinalSkill);
+        technicalSkillItems.forEach(item => {
+          const bar = item.querySelector('.skill-bar span');
+          if (bar) {
+            bar.style.width = bar.dataset.targetWidth;
+          }
+        });
       } else {
-        const skillObserver = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
+        // Kosongkan bar saat inisialisasi.
+        technicalSkillItems.forEach(item => {
+          const bar = item.querySelector('.skill-bar span');
+          if (!bar) return;
 
-            animateSkill(entry.target);
-            skillObserver.unobserve(entry.target);
-          });
-        }, {
-          threshold: 0.2
+          bar.style.transition = 'none';
+          bar.style.width = '0%';
+          void bar.offsetWidth;
+          bar.style.removeProperty('transition');
         });
 
-        skillItems.forEach(item => {
-          const bar = item.querySelector(".skill-bar span");
-          const number = item.querySelector(".skill-number");
+        const skillBarObserver = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              const item = entry.target;
+              const bar = item.querySelector('.skill-bar span');
 
-          if (!bar || !number) return;
+              if (!bar) return;
 
-          bar.style.transition = "none";
-          bar.style.width = "0%";
-          number.textContent = "0%";
+              if (entry.isIntersecting) {
+                // Bar masuk layar: mulai lagi dari 0%.
+                item.dataset.skillVisible = 'true';
 
-          skillObserver.observe(item);
+                bar.style.transition = 'none';
+                bar.style.width = '0%';
+                void bar.offsetWidth;
+                bar.style.removeProperty('transition');
+
+                requestAnimationFrame(() => {
+                  if (item.dataset.skillVisible === 'true') {
+                    bar.style.width = bar.dataset.targetWidth;
+                  }
+                });
+              } else {
+                // Bar keluar layar: reset tanpa animasi mundur.
+                item.dataset.skillVisible = 'false';
+
+                bar.style.transition = 'none';
+                bar.style.width = '0%';
+                void bar.offsetWidth;
+                bar.style.removeProperty('transition');
+              }
+            });
+          },
+          {
+            threshold: 0.2
+          }
+        );
+
+        technicalSkillItems.forEach(item => {
+          skillBarObserver.observe(item);
         });
       }
 
-      // -------------------------------------------------
-      // 5. PHONE / WHATSAPP LINK
-      // -------------------------------------------------
-      const phoneLink = document.getElementById("phone-link");
-
-      if (phoneLink) {
-        const isMobile =
-          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
-            .test(navigator.userAgent);
-
-        if (!isMobile) {
-          phoneLink.href = "https://wa.me/6281253817435";
-          phoneLink.target = "_blank";
-          phoneLink.rel = "noopener noreferrer";
-
-          phoneLink.setAttribute(
-            "aria-label",
-            "Contact via WhatsApp"
-          );
-        }
-      }
     });
   </script>
-
-<script>
-document.addEventListener("click", function (event) {
-    const link = event.target.closest('nav a[href="#skills"]');
-
-    if (!link) return;
-
-    const skills = document.getElementById("skills");
-    const header = document.querySelector("header");
-
-    if (!skills || !header) return;
-
-    event.preventDefault();
-    event.stopImmediatePropagation();
-
-    const headerHeight = header.getBoundingClientRect().height;
-    const extraSpace = 20;
-
-    const targetPosition =
-        skills.getBoundingClientRect().top +
-        window.scrollY -
-        headerHeight -
-        extraSpace;
-
-    window.scrollTo({
-        top: Math.max(0, targetPosition),
-        behavior: "smooth"
-    });
-
-    history.replaceState(null, "", "#skills");
-
-    document.querySelector("nav")?.classList.remove("active");
-}, true);
-</script>
-
 </body>
 </html>
