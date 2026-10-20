@@ -7,7 +7,8 @@ const themeIcon = themeBtn.querySelector('i');
 // Cek memori browser, jika sebelumnya user memilih tema terang, langsung aktifkan
 if (localStorage.getItem('theme') === 'light') {
     document.body.classList.add('light-theme');
-    themeIcon.classList.replace('fa-moon', 'fa-sun');
+    themeIcon.classList.replace('fa-moon', 'fa-sun');git checkout --theirs index.html
+    
 }
 
 // Logika ketika tombol tema diklik oleh user
