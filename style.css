@@ -341,7 +341,7 @@ section {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
 }
 
 .card {
@@ -581,11 +581,9 @@ section {
     font-size: 1.3rem;
     line-height: 1.7;
 }
-
 /* =====================================================
    EXPERIENCE — LINKEDIN STYLE
 ===================================================== */
-
 #experience .experience-timeline {
     gap: 1.4rem;
 }
@@ -605,10 +603,10 @@ section {
 #experience .experience-linkedin-card .timeline-content:hover {
     border-color: transparent;
 }
+
 /* =====================================================
    EXPERIENCE — FOTO DENGAN KOTAK PUTIH
 ===================================================== */
-
 #experience .experience-image-inside {
     display: flex;
     flex: 0 0 76px;
@@ -660,36 +658,221 @@ section {
     margin-bottom: 0;
 }
 
+/* Mengunci posisi pembungkus teks agar menjadi patokan gambar kecil di kanan */
+.timeline-text-inside {
+  position: relative;
+}
+
+/* Membatasi teks list sisi kanan agar menyisakan ruang kosong untuk gambar */
+#experience .experience-list li {
+  padding-right: 110px;
+}
+
+/* Memposisikan foto kecil mengapung tepat di pojok kanan bawah ruang kosong teks */
+.experience-media-preview {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+}
+
+/* Desain kotak mini gambar kerja */
+.experience-media-preview img {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Efek saat kursor menyentuh foto kerja */
+.experience-media-preview img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* RESPONSIVE: Mode tampilan HP agar gambar turun rapi */
+@media (max-width: 650px) {
+  #experience .experience-list li {
+    padding-right: 0;
+  }
+  .experience-media-preview {
+    position: static;
+    display: block;
+    margin-top: 10px;
+  }
+}
+
 /* =====================================================
-   EXPERIENCE — PENYESUAIAN HP
+   GAYA POP-UP LIGHTBOX (FIXED POP-UP STUCK)
 ===================================================== */
+.preview-modal {
+  display: none; /* Menyembunyikan modal secara default */
+  position: fixed !important;
+  z-index: 999999 !important; /* Nilai z-index super tinggi agar melompati layer lain */
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+/* Kelas pemicu aktif dari JavaScript */
+.preview-modal.show {
+  display: flex !important;  /* Memaksa modal muncul ke layar */
+  opacity: 1 !important;     /* Membuat modal terlihat jelas (100% solid) */
+}
+
+.modal-box {
+  max-width: 85%;
+  max-height: 85%;
+  text-align: center;
+  position: relative;
+  z-index: 1000000;
+}
+
+.modal-box img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 6px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+  object-fit: contain;
+}
+
+#modalCaption {
+  color: #ffffff !important;
+  margin-top: 14px;
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.close-btn, .nav-btn {
+  position: absolute;
+  color: #ffffff !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  user-select: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.close-btn {
+  top: 25px;
+  right: 35px;
+  font-size: 45px;
+  font-weight: 300;
+  z-index: 1000002;
+}
+
+.close-btn:hover {
+  color: #ff4d4d !important;
+}
+
+.nav-btn {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  padding: 12px 20px;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  border-radius: 8px;
+  z-index: 1000001;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.prev-btn { left: 25px; }
+.next-btn { right: 25px; }
+
+/* =====================================================
+   EDUCATION — UKURAN SAMA DENGAN EXPERIENCE
+===================================================== */
+#education .education-timeline {
+    gap: 1.4rem;
+}
+
+#education .education-linkedin-card {
+    padding: 2.2rem 1.8rem;
+}
+
+#education .education-linkedin-card .timeline-content {
+    gap: 1.6rem;
+}
+
+/* Kotak logo: 76px seperti foto di Experience */
+#education .timeline-icon-inside {
+    flex: 0 0 76px;
+    width: 76px;
+    height: 76px;
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+#education .timeline-text-inside h3 {
+    font-size: 1.8rem;
+}
+
+#education .timeline-text-inside h4 {
+    font-size: 1.5rem;
+}
+
+#education .education-meta {
+    margin: .2rem 0 .8rem;
+    color: var(--muted);
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+#education .education-meta span {
+    margin: 0 .3rem;
+}
+
+#education .education-list {
+    margin: .4rem 0 0;
+    padding-left: 2rem;
+}
+
+#education .education-list li {
+    margin-bottom: .6rem;
+    font-size: 1.3rem;
+    line-height: 1.7;
+}
+
+#education .education-list li:last-child {
+    margin-bottom: 0;
+}
 
 @media (max-width: 550px) {
-    #experience .experience-linkedin-card {
+    #education .education-linkedin-card {
         padding: 1.3rem;
     }
-
-    #experience .experience-linkedin-card .timeline-content {
+    #education .education-linkedin-card .timeline-content {
         gap: 1.2rem;
     }
-
-    #experience .experience-image-inside {
+    #education .timeline-icon-inside {
         flex-basis: 56px;
         width: 56px;
         height: 56px;
         padding: 4px;
     }
-
-    #experience .experience-list {
+    #education .education-list {
         padding-left: 1.7rem;
     }
-
-    #experience .experience-list li {
+    #education .education-list li {
         font-size: 1.2rem;
         line-height: 1.65;
     }
-
-    #experience .experience-meta {
+    #education .education-meta {
         font-size: 1.15rem;
     }
 }

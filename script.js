@@ -1,46 +1,76 @@
-// ==========================================
-// 1. FITUR FITUR PENGUBAH TEMA (DARK/LIGHT)
-// ==========================================
-const themeBtn = document.getElementById('theme-btn');
-const themeIcon = themeBtn.querySelector('i');
+// =====================================================
+// POP-UP EXPERIENCE GALLERY
+// =====================================================
+let currentImageIndex = 0;
+let mediaList = [];
 
-// Cek memori browser, jika sebelumnya user memilih tema terang, langsung aktifkan
-if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-theme');
-    themeIcon.classList.replace('fa-moon', 'fa-sun');git checkout --theirs index.html
-    
+function initExperienceGallery() {
+  const images = document.querySelectorAll(".experience-media-preview img");
+  mediaList = [];
+  images.forEach((img, index) => {
+    mediaList.push({
+      src: img.getAttribute("src"),
+      caption: img.getAttribute("alt") || "Work preview"
+    });
+    img.setAttribute("data-index", index);
+  });
 }
 
-// Logika ketika tombol tema diklik oleh user
-themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    
-    // Ganti ikon bulan/matahari dan simpan pilihan di local storage browser
-    if (document.body.classList.contains('light-theme')) {
-        themeIcon.classList.replace('fa-moon', 'fa-sun'); // Berubah jadi matahari
-        localStorage.setItem('theme', 'light'); // Mengingat pilihan tema terang
-    } else {
-        themeIcon.classList.replace('fa-sun', 'fa-moon'); // Berubah jadi bulan
-        localStorage.setItem('theme', 'dark');  // Mengingat pilihan tema gelap
-    }
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initExperienceGallery);
+} else {
+  initExperienceGallery();
+}
+
+function openModal(element) {
+  if (mediaList.length === 0) initExperienceGallery();
+
+  currentImageIndex = parseInt(element.getAttribute("data-index"), 10) || 0;
+  const modal = document.getElementById("galleryModal");
+  if (!modal) return;
+
+  updateModalContent();
+  modal.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function updateModalContent() {
+  const modalImg = document.getElementById("modalImage");
+  const modalCap = document.getElementById("modalCaption");
+  const item = mediaList[currentImageIndex];
+  if (!modalImg || !item) return;
+
+  modalImg.src = item.src;
+  modalImg.alt = item.caption;
+  if (modalCap) modalCap.textContent = item.caption;
+}
+
+function changeImage(direction, event) {
+  if (event) event.stopPropagation();
+  currentImageIndex += direction;
+  if (currentImageIndex >= mediaList.length) currentImageIndex = 0;
+  if (currentImageIndex < 0) currentImageIndex = mediaList.length - 1;
+  updateModalContent();
+}
+
+function closeModal() {
+  const modal = document.getElementById("galleryModal");
+  if (modal) modal.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+// Klik area gelap (di luar foto dan tombol) untuk menutup
+document.addEventListener("click", event => {
+  const modal = document.getElementById("galleryModal");
+  if (modal && event.target === modal) closeModal();
 });
 
+// Keyboard: Esc, panah kiri/kanan
+document.addEventListener("keydown", event => {
+  const modal = document.getElementById("galleryModal");
+  if (!modal || !modal.classList.contains("show")) return;
 
-// ==========================================
-// 2. FITUR ACCORDION FAQ (KODE ANDA)
-// ==========================================
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const currentItem = question.parentElement;
-
-        document.querySelectorAll('.faq-item').forEach(item => {
-            if (item !== currentItem) {
-                item.classList.remove('active');
-            }
-        });
-
-        currentItem.classList.toggle('active');
-    });
+  if (event.key === "Escape") closeModal();
+  else if (event.key === "ArrowRight") changeImage(1);
+  else if (event.key === "ArrowLeft") changeImage(-1);
 });
